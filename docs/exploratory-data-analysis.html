@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Data Analysis with R</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook.">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Data Analysis with R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Data Analysis with R" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="data-transformation.html">
+<link rel="next" href="summary.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="https://simdaclub.com/">SIM Data Analysis Club</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> R 101</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#working-directory"><i class="fa fa-check"></i><b>1.1</b> Working Directory</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#basic-arithmetic"><i class="fa fa-check"></i><b>1.2</b> Basic Arithmetic</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#defining-variables-objects"><i class="fa fa-check"></i><b>1.3</b> Defining Variables &amp; Objects</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#vector"><i class="fa fa-check"></i><b>1.4</b> Vector</a></li>
+<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#types-of-object"><i class="fa fa-check"></i><b>1.5</b> Types of object</a></li>
+<li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#list"><i class="fa fa-check"></i><b>1.6</b> List</a></li>
+<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#matrices"><i class="fa fa-check"></i><b>1.7</b> Matrices</a></li>
+<li class="chapter" data-level="1.8" data-path="intro.html"><a href="intro.html#data-frame"><i class="fa fa-check"></i><b>1.8</b> Data Frame</a></li>
+<li class="chapter" data-level="1.9" data-path="intro.html"><a href="intro.html#packages"><i class="fa fa-check"></i><b>1.9</b> Packages</a></li>
+<li class="chapter" data-level="1.10" data-path="intro.html"><a href="intro.html#control-structures"><i class="fa fa-check"></i><b>1.10</b> Control Structures</a><ul>
+<li class="chapter" data-level="1.10.1" data-path="intro.html"><a href="intro.html#decision-making"><i class="fa fa-check"></i><b>1.10.1</b> Decision Making</a></li>
+<li class="chapter" data-level="1.10.2" data-path="intro.html"><a href="intro.html#loops"><i class="fa fa-check"></i><b>1.10.2</b> Loops</a></li>
+<li class="chapter" data-level="1.10.3" data-path="intro.html"><a href="intro.html#combining-decision-making-with-loops."><i class="fa fa-check"></i><b>1.10.3</b> Combining Decision making with loops.</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="data-visualisation.html"><a href="data-visualisation.html"><i class="fa fa-check"></i><b>2</b> Data Visualisation</a><ul>
+<li class="chapter" data-level="2.1" data-path="data-visualisation.html"><a href="data-visualisation.html#initialise-your-environment"><i class="fa fa-check"></i><b>2.1</b> Initialise your environment</a></li>
+<li class="chapter" data-level="2.2" data-path="data-visualisation.html"><a href="data-visualisation.html#import-the-dataset"><i class="fa fa-check"></i><b>2.2</b> Import the Dataset</a></li>
+<li class="chapter" data-level="2.3" data-path="data-visualisation.html"><a href="data-visualisation.html#introduction"><i class="fa fa-check"></i><b>2.3</b> Introduction</a></li>
+<li class="chapter" data-level="2.4" data-path="data-visualisation.html"><a href="data-visualisation.html#aesthetic"><i class="fa fa-check"></i><b>2.4</b> Aesthetic</a></li>
+<li class="chapter" data-level="2.5" data-path="data-visualisation.html"><a href="data-visualisation.html#geometric"><i class="fa fa-check"></i><b>2.5</b> Geometric</a></li>
+<li class="chapter" data-level="2.6" data-path="data-visualisation.html"><a href="data-visualisation.html#statistic"><i class="fa fa-check"></i><b>2.6</b> Statistic</a></li>
+<li class="chapter" data-level="2.7" data-path="data-visualisation.html"><a href="data-visualisation.html#positions"><i class="fa fa-check"></i><b>2.7</b> Positions</a></li>
+<li class="chapter" data-level="2.8" data-path="data-visualisation.html"><a href="data-visualisation.html#facets"><i class="fa fa-check"></i><b>2.8</b> Facets</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data Transformation</a><ul>
+<li class="chapter" data-level="3.1" data-path="data-transformation.html"><a href="data-transformation.html#initialise-your-environment-1"><i class="fa fa-check"></i><b>3.1</b> Initialise your environment</a></li>
+<li class="chapter" data-level="3.2" data-path="data-transformation.html"><a href="data-transformation.html#import-the-dataset-1"><i class="fa fa-check"></i><b>3.2</b> Import the Dataset</a></li>
+<li class="chapter" data-level="3.3" data-path="data-transformation.html"><a href="data-transformation.html#filter"><i class="fa fa-check"></i><b>3.3</b> Filter</a></li>
+<li class="chapter" data-level="3.4" data-path="data-transformation.html"><a href="data-transformation.html#arrange"><i class="fa fa-check"></i><b>3.4</b> Arrange</a></li>
+<li class="chapter" data-level="3.5" data-path="data-transformation.html"><a href="data-transformation.html#select"><i class="fa fa-check"></i><b>3.5</b> Select</a></li>
+<li class="chapter" data-level="3.6" data-path="data-transformation.html"><a href="data-transformation.html#mutate"><i class="fa fa-check"></i><b>3.6</b> Mutate</a></li>
+<li class="chapter" data-level="3.7" data-path="data-transformation.html"><a href="data-transformation.html#summarise"><i class="fa fa-check"></i><b>3.7</b> Summarise</a></li>
+<li class="chapter" data-level="3.8" data-path="data-transformation.html"><a href="data-transformation.html#group-by"><i class="fa fa-check"></i><b>3.8</b> Group By</a></li>
+<li class="chapter" data-level="3.9" data-path="data-transformation.html"><a href="data-transformation.html#data-pipelines"><i class="fa fa-check"></i><b>3.9</b> Data Pipelines</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html"><i class="fa fa-check"></i><b>4</b> Exploratory Data Analysis</a><ul>
+<li class="chapter" data-level="4.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#movies"><i class="fa fa-check"></i><b>4.1</b> Movies</a></li>
+<li class="chapter" data-level="4.2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#initialise-your-environment-2"><i class="fa fa-check"></i><b>4.2</b> Initialise your environment</a></li>
+<li class="chapter" data-level="4.3" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#import-the-dataset-2"><i class="fa fa-check"></i><b>4.3</b> Import the Dataset</a></li>
+<li class="chapter" data-level="4.4" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#imdb-scores-vs-number-of-faces-in-movies-poster"><i class="fa fa-check"></i><b>4.4</b> IMDB Scores VS Number of faces in movies poster</a></li>
+<li class="chapter" data-level="4.5" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#imdb-scores-vs-country"><i class="fa fa-check"></i><b>4.5</b> IMDB Scores VS Country</a></li>
+<li class="chapter" data-level="4.6" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#imdb-scores-vs-movies-year"><i class="fa fa-check"></i><b>4.6</b> IMDB Scores VS Movies year</a></li>
+<li class="chapter" data-level="4.7" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#imdb-scores-vs-movie-facebook-popularity"><i class="fa fa-check"></i><b>4.7</b> IMDB Scores VS Movie Facebook Popularity</a></li>
+<li class="chapter" data-level="4.8" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#imdb-score-vs-director-facebook-popularity"><i class="fa fa-check"></i><b>4.8</b> IMDB score VS Director Facebook Popularity</a></li>
+<li class="chapter" data-level="4.9" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#correlation-analysis"><i class="fa fa-check"></i><b>4.9</b> Correlation analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="summary.html"><a href="summary.html"><i class="fa fa-check"></i><b>5</b> Summary</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Analysis with R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="exploratory-data-analysis" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Exploratory Data Analysis</h1>
+<p>Having learnt the basic of R as well as 2 of the most famous packges in R, namely <strong>dplyr</strong> and <strong>ggplot2</strong>, we are adequately equip to perfrom simple Exploratory Data Analysis (EDA).</p>
+<p>Exploratory data analysis is the process by which we look at the data that we have, draw a fews plots so as to gain a few insight into the data that we have at hand.</p>
+<p>This differs from the classical types of analysis where we apply some statistical function to gain some understanding of the data.</p>
+<p>This means that modelling come after the analysis during EDA. whereas it’s the opposite for the typical analysis.</p>
+<div id="movies" class="section level2">
+<h2><span class="header-section-number">4.1</span> Movies</h2>
+<p>We will be exploring the IMDB Movies Datasets taken from <a href="https://www.kaggle.com/" class="uri">https://www.kaggle.com/</a>, which houses many free online datasets.</p>
+<p>To get started, lets first initialised our environment by loading the required packages and importing the data sets.</p>
+</div>
+<div id="initialise-your-environment-2" class="section level2">
+<h2><span class="header-section-number">4.2</span> Initialise your environment</h2>
+<p><strong>Install the following package</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># you only need to install it once</span>
+<span class="kw">install.packages</span>(<span class="st">&quot;dplyr&quot;</span>)
+<span class="kw">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</code></pre></div>
+<p><strong>Load the packages into RStudio</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(dplyr)
+<span class="kw">library</span>(ggplot2)</code></pre></div>
+<p>Both packages comes with a few loaded packages.</p>
+<p>To check them out simply type the following command</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="dt">package =</span> <span class="st">&quot;dplyr&quot;</span>)
+<span class="kw">data</span>(<span class="dt">package =</span> <span class="st">&quot;ggplot2&quot;</span>)</code></pre></div>
+<p>To show all the available function within both package,</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ls</span>(<span class="st">&quot;package:dplyr&quot;</span>)
+<span class="kw">ls</span>(<span class="st">&quot;package:ggplot2&quot;</span>)</code></pre></div>
+</div>
+<div id="import-the-dataset-2" class="section level2">
+<h2><span class="header-section-number">4.3</span> Import the Dataset</h2>
+<p>Before we can import the Data Sets, we have to ensure the the .csv file is the same project folder. we can first check if we are in the correct directory by using <code>getwd()</code></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># check if the dataset is in the same project folder</span>
+<span class="kw">getwd</span>()</code></pre></div>
+<p>If it is not in the same project folder, we can set it manually by passing the correct path into the function <code>setwd()</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">setwd</span>(<span class="st">&quot;       &quot;</span>)</code></pre></div>
+<p>Once these are settled, we can import the datasets using the <code>read.csv()</code> function.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">movies &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;movie_metadata.csv&quot;</span>, <span class="dt">strip.white =</span> <span class="ot">TRUE</span>) %&gt;%<span class="st"> </span><span class="kw">as_data_frame</span>()
+movies</code></pre></div>
+<pre><code>## # A tibble: 5,043 x 28
+##     color     director_name num_critic_for_reviews duration
+##    &lt;fctr&gt;            &lt;fctr&gt;                  &lt;int&gt;    &lt;int&gt;
+##  1  Color     James Cameron                    723      178
+##  2  Color    Gore Verbinski                    302      169
+##  3  Color        Sam Mendes                    602      148
+##  4  Color Christopher Nolan                    813      164
+##  5              Doug Walker                     NA       NA
+##  6  Color    Andrew Stanton                    462      132
+##  7  Color         Sam Raimi                    392      156
+##  8  Color      Nathan Greno                    324      100
+##  9  Color       Joss Whedon                    635      141
+## 10  Color       David Yates                    375      153
+## # ... with 5,033 more rows, and 24 more variables:
+## #   director_facebook_likes &lt;int&gt;, actor_3_facebook_likes &lt;int&gt;,
+## #   actor_2_name &lt;fctr&gt;, actor_1_facebook_likes &lt;int&gt;, gross &lt;int&gt;,
+## #   genres &lt;fctr&gt;, actor_1_name &lt;fctr&gt;, movie_title &lt;fctr&gt;,
+## #   num_voted_users &lt;int&gt;, cast_total_facebook_likes &lt;int&gt;,
+## #   actor_3_name &lt;fctr&gt;, facenumber_in_poster &lt;int&gt;, plot_keywords &lt;fctr&gt;,
+## #   movie_imdb_link &lt;fctr&gt;, num_user_for_reviews &lt;int&gt;, language &lt;fctr&gt;,
+## #   country &lt;fctr&gt;, content_rating &lt;fctr&gt;, budget &lt;dbl&gt;, title_year &lt;int&gt;,
+## #   actor_2_facebook_likes &lt;int&gt;, imdb_score &lt;dbl&gt;, aspect_ratio &lt;dbl&gt;,
+## #   movie_facebook_likes &lt;int&gt;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">View</span>(movies)</code></pre></div>
+<p>We can do some prelimanry check on the attributes of the datasets</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(sales)
+<span class="kw">dim</span>(sales)
+<span class="kw">names</span>(sales)
+<span class="kw">str</span>(sales)
+<span class="kw">glimpse</span>(sales) <span class="co"># dplyr method</span></code></pre></div>
+</div>
+<div id="imdb-scores-vs-number-of-faces-in-movies-poster" class="section level2">
+<h2><span class="header-section-number">4.4</span> IMDB Scores VS Number of faces in movies poster</h2>
+<p>Imdb score vs number of face in poster</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> movies, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> imdb_score, <span class="dt">y =</span> facenumber_in_poster)) +
+<span class="st">  </span><span class="kw">geom_col</span>()</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>Proportion of movies against imdb score</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> movies, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> imdb_score, <span class="dt">y =</span> ..prop..)) +
+<span class="st">  </span><span class="kw">geom_bar</span>()</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p>Histogram of the number of human faces in movies poster</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">movies %&gt;%
+<span class="st">  </span><span class="kw">select</span>(movie_title, facenumber_in_poster, imdb_score) %&gt;%
+<span class="st">  </span><span class="kw">group_by</span>(imdb_score) %&gt;%
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">total_face =</span> <span class="kw">sum</span>(facenumber_in_poster, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)) %&gt;%
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">prob =</span> total_face /<span class="st"> </span><span class="kw">sum</span>(total_face, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)) %&gt;%
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> imdb_score, <span class="dt">y =</span> total_face)) +
+<span class="st">    </span><span class="kw">geom_col</span>(<span class="dt">width =</span> <span class="dv">1</span>) +
+<span class="st">    </span><span class="kw">ggtitle</span>(<span class="st">&quot;Histogram of the number of human faces in movies poster&quot;</span>)</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>However plotting the face number vs imdb score directly in a bar chart doesnt seems to be a good estimate. Lets first filter out a particular movie rating, say 7.5, and count the number of faces in the poster.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">movies %&gt;%
+<span class="st">  </span><span class="kw">select</span>(movie_title, facenumber_in_poster, imdb_score) %&gt;%
+<span class="st">  </span><span class="kw">filter</span>(imdb_score ==<span class="st"> </span><span class="fl">7.5</span>) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">group_by</span>(facenumber_in_poster) %&gt;%
+<span class="st">  </span><span class="kw">count</span>() %&gt;%
+<span class="st">  </span><span class="kw">ggplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> facenumber_in_poster, <span class="dt">y =</span> n)) +
+<span class="st">    </span><span class="kw">geom_col</span>()</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p>Alternatively, we can also do it the following way</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">movies %&gt;%
+<span class="st">  </span><span class="kw">select</span>(movie_title, facenumber_in_poster, imdb_score) %&gt;%
+<span class="st">  </span><span class="kw">filter</span>(imdb_score ==<span class="st"> </span><span class="fl">7.5</span>) %&gt;%
+<span class="st">  </span><span class="kw">ggplot</span>() +
+<span class="st">    </span><span class="kw">geom_bar</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> facenumber_in_poster))</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>However, if we were to plot a scatter plot instead, we get a different insight.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> movies, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> imdb_score, <span class="dt">y =</span> facenumber_in_poster)) +
+<span class="st">  </span><span class="kw">geom_point</span>()</code></pre></div>
+<pre><code>## Warning: Removed 13 rows containing missing values (geom_point).</code></pre>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p>Infact if we were to draw a linear model though it,</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> movies, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> imdb_score, <span class="dt">y =</span> facenumber_in_poster)) +
+<span class="st">  </span><span class="kw">geom_point</span>() +
+<span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>)</code></pre></div>
+<pre><code>## Warning: Removed 13 rows containing non-finite values (stat_smooth).</code></pre>
+<pre><code>## Warning: Removed 13 rows containing missing values (geom_point).</code></pre>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p>We can do a simple statistic to calculate to correlation coefficient, which is infact negatively related. showing no relationship at all.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">movies %&gt;%
+<span class="st">  </span><span class="kw">select</span>(facenumber_in_poster, imdb_score) %&gt;%
+<span class="st">  </span><span class="kw">lm</span>(<span class="dt">formula =</span> facenumber_in_poster ~<span class="st"> </span>imdb_score)</code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = facenumber_in_poster ~ imdb_score, data = .)
+## 
+## Coefficients:
+## (Intercept)   imdb_score  
+##      2.0975      -0.1127</code></pre>
+</div>
+<div id="imdb-scores-vs-country" class="section level2">
+<h2><span class="header-section-number">4.5</span> IMDB Scores VS Country</h2>
+<p>Lets find the score for the top 10 country</p>
+<p>First, we list the top 10 country that produces movies</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">top_10_country &lt;-<span class="st"> </span>movies %&gt;%
+<span class="st">  </span><span class="kw">group_by</span>(country) %&gt;%
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">count =</span> <span class="kw">n</span>()) %&gt;%
+<span class="st">  </span><span class="kw">top_n</span>(<span class="dv">10</span>) %&gt;%
+<span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(count))
+
+top_10_country</code></pre></div>
+<pre><code>## # A tibble: 11 x 2
+##      country count
+##       &lt;fctr&gt; &lt;int&gt;
+##  1       USA  3807
+##  2        UK   448
+##  3    France   154
+##  4    Canada   126
+##  5   Germany    97
+##  6 Australia    55
+##  7     India    34
+##  8     Spain    33
+##  9     China    30
+## 10     Italy    23
+## 11     Japan    23</code></pre>
+<p>Next, we filter out all top 10 countries that produces movies</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">countries &lt;-<span class="st"> </span>movies %&gt;%
+<span class="st">  </span><span class="kw">select</span>(country, imdb_score, gross) %&gt;%
+<span class="st">  </span><span class="kw">filter</span>(country  %in%<span class="st"> </span>top_10_country$country)
+
+countries</code></pre></div>
+<pre><code>## # A tibble: 4,830 x 3
+##    country imdb_score     gross
+##     &lt;fctr&gt;      &lt;dbl&gt;     &lt;int&gt;
+##  1     USA        7.9 760505847
+##  2     USA        7.1 309404152
+##  3      UK        6.8 200074175
+##  4     USA        8.5 448130642
+##  5     USA        6.6  73058679
+##  6     USA        6.2 336530303
+##  7     USA        7.8 200807262
+##  8     USA        7.5 458991599
+##  9      UK        7.5 301956980
+## 10     USA        6.9 330249062
+## # ... with 4,820 more rows</code></pre>
+<p>Finally, we draw a scatter plot of all the movies produces by each of the top 10 countries.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> countries, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> imdb_score, <span class="dt">y =</span> gross)) +
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">colour =</span> country)) +
+<span class="st">  </span><span class="kw">facet_wrap</span>(~<span class="st"> </span>country)</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p>Similarly we can also draw a boxplot. We can see that although USA and UK are the top produces of movies, they too produce lots of low rated movies as well.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> countries, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> country, <span class="dt">y =</span> imdb_score)) +
+<span class="st">  </span><span class="kw">geom_boxplot</span>()</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+</div>
+<div id="imdb-scores-vs-movies-year" class="section level2">
+<h2><span class="header-section-number">4.6</span> IMDB Scores VS Movies year</h2>
+<p>Lets draw a simple boxplot for all movies all year</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> movies, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">factor</span>(title_year), <span class="dt">y =</span> imdb_score)) +
+<span class="st">  </span><span class="kw">geom_boxplot</span>()</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p>Lts scope in to all the movies after 1965</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">year &lt;-<span class="st"> </span>movies %&gt;%
+<span class="st">  </span><span class="kw">select</span>(title_year, imdb_score, gross) %&gt;%
+<span class="st">  </span><span class="kw">filter</span>(title_year &gt;=<span class="st"> </span><span class="dv">1965</span>) %&gt;%
+<span class="st">  </span><span class="kw">arrange</span>(title_year) 
+
+year</code></pre></div>
+<pre><code>## # A tibble: 4,827 x 3
+##    title_year imdb_score     gross
+##         &lt;int&gt;      &lt;dbl&gt;     &lt;int&gt;
+##  1       1965        6.6   8000000
+##  2       1965        8.0 111722000
+##  3       1965        7.0  63600000
+##  4       1965        8.0 163214286
+##  5       1965        6.8     14873
+##  6       1965        7.3        NA
+##  7       1965        7.7        NA
+##  8       1965        8.4        NA
+##  9       1966        7.9        NA
+## 10       1966        7.0        NA
+## # ... with 4,817 more rows</code></pre>
+<p>Filtered box plot for all movies after 1965 only</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> year, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> <span class="kw">factor</span>(title_year), <span class="dt">y =</span> imdb_score)) +
+<span class="st">  </span><span class="kw">geom_boxplot</span>()</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+</div>
+<div id="imdb-scores-vs-movie-facebook-popularity" class="section level2">
+<h2><span class="header-section-number">4.7</span> IMDB Scores VS Movie Facebook Popularity</h2>
+<p>Basic plot of imdb score vs movie facebook like.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> movies, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> imdb_score, <span class="dt">y =</span> movie_facebook_likes)) +
+<span class="st">  </span><span class="kw">geom_point</span>() </code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<p>Looking at the plot, what if we instead what to show the proportion of movies created by the top 10 countries against the total movies available? Meaning, we want to have 10 subplots of the top 10 countrys only with the backdrop of the above plot?</p>
+<p>The following steps allow us to do so.</p>
+<ol style="list-style-type: decimal">
+<li>We filter out those country thats lies in the top 10 range.</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">facebook_pop &lt;-<span class="st"> </span>movies %&gt;%
+<span class="st">  </span><span class="kw">select</span>(country, movie_title, imdb_score, movie_facebook_likes) %&gt;%
+<span class="st">  </span><span class="kw">filter</span>(country  %in%<span class="st"> </span>top_10_country$country); facebook_pop</code></pre></div>
+<pre><code>## # A tibble: 4,830 x 4
+##    country                                movie_title imdb_score
+##     &lt;fctr&gt;                                     &lt;fctr&gt;      &lt;dbl&gt;
+##  1     USA                                   AvatarÂ         7.9
+##  2     USA Pirates of the Caribbean: At World&#39;s EndÂ         7.1
+##  3      UK                                  SpectreÂ         6.8
+##  4     USA                    The Dark Knight RisesÂ         8.5
+##  5     USA                              John CarterÂ         6.6
+##  6     USA                             Spider-Man 3Â         6.2
+##  7     USA                                  TangledÂ         7.8
+##  8     USA                  Avengers: Age of UltronÂ         7.5
+##  9      UK   Harry Potter and the Half-Blood PrinceÂ         7.5
+## 10     USA       Batman v Superman: Dawn of JusticeÂ         6.9
+## # ... with 4,820 more rows, and 1 more variables:
+## #   movie_facebook_likes &lt;int&gt;</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Next we plot all the points with country that are in the top 10 only.</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> facebook_pop, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> imdb_score, <span class="dt">y =</span> movie_facebook_likes)) +
+<span class="st">  </span><span class="kw">geom_point</span>()</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Say we want to facet the plot to show the points specific to each country</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> facebook_pop, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> imdb_score, <span class="dt">y =</span> movie_facebook_likes)) +
+<span class="st">  </span><span class="kw">geom_point</span>() +
+<span class="st">  </span><span class="kw">facet_wrap</span>( ~<span class="st"> </span>country)</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+<ol start="4" style="list-style-type: decimal">
+<li>what if we want to add a grey backdrop point behind every facet to see which points out of the original belong to which country</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> facebook_pop, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> imdb_score, <span class="dt">y =</span> movie_facebook_likes)) +
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">data =</span> <span class="kw">mutate</span>(movies, <span class="dt">country =</span> <span class="ot">NULL</span>), <span class="dt">colour =</span> <span class="st">&quot;grey65&quot;</span>) +
+<span class="st">  </span><span class="kw">geom_point</span>() +
+<span class="st">  </span><span class="kw">facet_wrap</span>( ~<span class="st"> </span>country)</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<ol start="5" style="list-style-type: decimal">
+<li>Lastly to add a different colour to each facets,</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> facebook_pop, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> imdb_score, <span class="dt">y =</span> movie_facebook_likes)) +
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">data =</span> <span class="kw">mutate</span>(movies, <span class="dt">country =</span> <span class="ot">NULL</span>), <span class="dt">colour =</span> <span class="st">&quot;grey65&quot;</span>) +
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">colour =</span> country)) +
+<span class="st">  </span><span class="kw">facet_wrap</span>( ~<span class="st"> </span>country) </code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+</div>
+<div id="imdb-score-vs-director-facebook-popularity" class="section level2">
+<h2><span class="header-section-number">4.8</span> IMDB score VS Director Facebook Popularity</h2>
+<p>Basic plot of imdb score vs director facebook likes.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> movies, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> imdb_score, <span class="dt">y =</span> director_facebook_likes)) +
+<span class="st">  </span><span class="kw">geom_point</span>()</code></pre></div>
+<pre><code>## Warning: Removed 104 rows containing missing values (geom_point).</code></pre>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
+<p>Lets filtering out the Top N Director with facebook likes above 10K</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">top_n_director &lt;-<span class="st"> </span>movies %&gt;%
+<span class="st">  </span><span class="kw">select</span>(director_name, director_facebook_likes) %&gt;%
+<span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(director_facebook_likes), director_name) %&gt;%
+<span class="st">  </span><span class="kw">distinct</span>() %&gt;%
+<span class="st">  </span><span class="kw">filter</span>(director_facebook_likes &gt;=<span class="st"> </span><span class="dv">10000</span>)
+
+top_n_director</code></pre></div>
+<pre><code>## # A tibble: 21 x 2
+##           director_name director_facebook_likes
+##                  &lt;fctr&gt;                   &lt;int&gt;
+##  1 Joseph Gordon-Levitt                   23000
+##  2    Christopher Nolan                   22000
+##  3        David Fincher                   21000
+##  4       Derick Martini                   20000
+##  5    Denzel Washington                   18000
+##  6         Kevin Spacey                   18000
+##  7      Martin Scorsese                   17000
+##  8       Clint Eastwood                   16000
+##  9    Quentin Tarantino                   16000
+## 10            Tom Hanks                   15000
+## # ... with 11 more rows</code></pre>
+<p>Sort out the top director and their movies</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">direc_fb_pop &lt;-<span class="st"> </span>movies %&gt;%
+<span class="st">  </span><span class="kw">select</span>(movie_title, director_name, director_facebook_likes, imdb_score) %&gt;%
+<span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(director_facebook_likes), director_name, <span class="kw">desc</span>(imdb_score), movie_title) %&gt;%
+<span class="st">  </span><span class="kw">filter</span>(director_name %in%<span class="st"> </span>top_n_director$director_name); direc_fb_pop</code></pre></div>
+<pre><code>## # A tibble: 181 x 4
+##                movie_title        director_name director_facebook_likes
+##                     &lt;fctr&gt;               &lt;fctr&gt;                   &lt;int&gt;
+##  1               Don JonÂ  Joseph Gordon-Levitt                   23000
+##  2       The Dark KnightÂ     Christopher Nolan                   22000
+##  3             InceptionÂ     Christopher Nolan                   22000
+##  4          InterstellarÂ     Christopher Nolan                   22000
+##  5               MementoÂ     Christopher Nolan                   22000
+##  6 The Dark Knight RisesÂ     Christopher Nolan                   22000
+##  7          The PrestigeÂ     Christopher Nolan                   22000
+##  8         Batman BeginsÂ     Christopher Nolan                   22000
+##  9              InsomniaÂ     Christopher Nolan                   22000
+## 10            Fight ClubÂ         David Fincher                   21000
+## # ... with 171 more rows, and 1 more variables: imdb_score &lt;dbl&gt;</code></pre>
+<p>A plot showing only the director with likes above 10K in colour</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> direc_fb_pop, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> imdb_score, <span class="dt">y =</span> director_facebook_likes)) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">data =</span> movies, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> imdb_score, <span class="dt">y =</span> director_facebook_likes)) +
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">colour =</span> <span class="kw">factor</span>(director_name), <span class="dt">size =</span> <span class="dv">5</span>)) </code></pre></div>
+<pre><code>## Warning: Removed 104 rows containing missing values (geom_point).</code></pre>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
+<p>To list out the top 4 movies for each director above 10K likes</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">direc_fb_pop %&gt;%
+<span class="st">  </span><span class="kw">group_by</span>(director_name) %&gt;%
+<span class="st">  </span><span class="kw">top_n</span>(<span class="dv">4</span>)</code></pre></div>
+<pre><code>## Selecting by imdb_score</code></pre>
+<pre><code>## # A tibble: 71 x 4
+## # Groups:   director_name [21]
+##                movie_title        director_name director_facebook_likes
+##                     &lt;fctr&gt;               &lt;fctr&gt;                   &lt;int&gt;
+##  1               Don JonÂ  Joseph Gordon-Levitt                   23000
+##  2       The Dark KnightÂ     Christopher Nolan                   22000
+##  3             InceptionÂ     Christopher Nolan                   22000
+##  4          InterstellarÂ     Christopher Nolan                   22000
+##  5               MementoÂ     Christopher Nolan                   22000
+##  6 The Dark Knight RisesÂ     Christopher Nolan                   22000
+##  7          The PrestigeÂ     Christopher Nolan                   22000
+##  8            Fight ClubÂ         David Fincher                   21000
+##  9                 Se7enÂ         David Fincher                   21000
+## 10             Gone GirlÂ         David Fincher                   21000
+## # ... with 61 more rows, and 1 more variables: imdb_score &lt;dbl&gt;</code></pre>
+<p>So why is Joseph Gordan levitt rank above Christopher Nolan? Lets add new variables like actor 1 name and actor 1 facebook likes. we can see that Joseph Gordan levitt facebook likes is actually equal to its director facebook like, hence making him rank higher than Christopher Nolan</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">movies %&gt;%
+<span class="st">  </span><span class="kw">select</span>(movie_title, 
+         director_name, 
+         director_facebook_likes, 
+         actor_1_name, 
+         actor_1_facebook_likes, 
+         imdb_score) %&gt;%
+<span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(director_facebook_likes),
+          director_name, 
+          <span class="kw">desc</span>(imdb_score), 
+          movie_title) %&gt;%
+<span class="st">  </span><span class="kw">filter</span>(director_name %in%<span class="st"> </span>top_n_director$director_name)</code></pre></div>
+<pre><code>## # A tibble: 181 x 6
+##                movie_title        director_name director_facebook_likes
+##                     &lt;fctr&gt;               &lt;fctr&gt;                   &lt;int&gt;
+##  1               Don JonÂ  Joseph Gordon-Levitt                   23000
+##  2       The Dark KnightÂ     Christopher Nolan                   22000
+##  3             InceptionÂ     Christopher Nolan                   22000
+##  4          InterstellarÂ     Christopher Nolan                   22000
+##  5               MementoÂ     Christopher Nolan                   22000
+##  6 The Dark Knight RisesÂ     Christopher Nolan                   22000
+##  7          The PrestigeÂ     Christopher Nolan                   22000
+##  8         Batman BeginsÂ     Christopher Nolan                   22000
+##  9              InsomniaÂ     Christopher Nolan                   22000
+## 10            Fight ClubÂ         David Fincher                   21000
+## # ... with 171 more rows, and 3 more variables: actor_1_name &lt;fctr&gt;,
+## #   actor_1_facebook_likes &lt;int&gt;, imdb_score &lt;dbl&gt;</code></pre>
+</div>
+<div id="correlation-analysis" class="section level2">
+<h2><span class="header-section-number">4.9</span> Correlation analysis</h2>
+<p>We are going to extract out all the columns that are numeric only.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">movies_num &lt;-<span class="st"> </span>movies %&gt;%
+<span class="st">  </span><span class="kw">select</span>(imdb_score,
+         director_facebook_likes,
+         cast_total_facebook_likes,
+         num_critic_for_reviews,
+         duration,
+         num_voted_users,
+         actor_1_facebook_likes,
+         actor_2_facebook_likes,
+         actor_3_facebook_likes,
+         movie_facebook_likes,
+         facenumber_in_poster,
+         title_year,
+         gross,
+         budget)
+
+movies_num</code></pre></div>
+<pre><code>## # A tibble: 5,043 x 14
+##    imdb_score director_facebook_likes cast_total_facebook_likes
+##         &lt;dbl&gt;                   &lt;int&gt;                     &lt;int&gt;
+##  1        7.9                       0                      4834
+##  2        7.1                     563                     48350
+##  3        6.8                       0                     11700
+##  4        8.5                   22000                    106759
+##  5        7.1                     131                       143
+##  6        6.6                     475                      1873
+##  7        6.2                       0                     46055
+##  8        7.8                      15                      2036
+##  9        7.5                       0                     92000
+## 10        7.5                     282                     58753
+## # ... with 5,033 more rows, and 11 more variables:
+## #   num_critic_for_reviews &lt;int&gt;, duration &lt;int&gt;, num_voted_users &lt;int&gt;,
+## #   actor_1_facebook_likes &lt;int&gt;, actor_2_facebook_likes &lt;int&gt;,
+## #   actor_3_facebook_likes &lt;int&gt;, movie_facebook_likes &lt;int&gt;,
+## #   facenumber_in_poster &lt;int&gt;, title_year &lt;int&gt;, gross &lt;int&gt;,
+## #   budget &lt;dbl&gt;</code></pre>
+<p>There are various methods to draw correlation plots:</p>
+<ol style="list-style-type: decimal">
+<li><code>pairs()</code> from base R</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pairs</span>(movies_num)</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
+<ol start="2" style="list-style-type: decimal">
+<li><code>corrplot()</code> from corrplot package</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;corrplot&quot;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(corrplot)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">M &lt;-<span class="st"> </span><span class="kw">cor</span>(movies_num, <span class="dt">use =</span> <span class="st">&quot;complete.obs&quot;</span>) <span class="co"># complete.obs removes all the NA&#39;s</span>
+M</code></pre></div>
+<pre><code>##                            imdb_score director_facebook_likes
+## imdb_score                 1.00000000              0.18987519
+## director_facebook_likes    0.18987519              1.00000000
+## cast_total_facebook_likes  0.10531945              0.12059873
+## num_critic_for_reviews     0.34143593              0.17977707
+## duration                   0.35983137              0.18098298
+## num_voted_users            0.47411454              0.30228315
+## actor_1_facebook_likes     0.09225238              0.09128625
+## actor_2_facebook_likes     0.10193664              0.11812015
+## actor_3_facebook_likes     0.06470126              0.11932301
+## movie_facebook_likes       0.27761324              0.16413999
+## facenumber_in_poster      -0.06629431             -0.04743442
+## title_year                -0.12929506             -0.04611660
+## gross                      0.21153313              0.14239829
+## budget                     0.02896085              0.01920008
+##                           cast_total_facebook_likes num_critic_for_reviews
+## imdb_score                               0.10531945             0.34143593
+## director_facebook_likes                  0.12059873             0.17977707
+## cast_total_facebook_likes                1.00000000             0.24410390
+## num_critic_for_reviews                   0.24410390             1.00000000
+## duration                                 0.12345912             0.23531057
+## num_voted_users                          0.25372185             0.59913124
+## actor_1_facebook_likes                   0.94520338             0.17259837
+## actor_2_facebook_likes                   0.64285379             0.25950076
+## actor_3_facebook_likes                   0.49015939             0.25754977
+## movie_facebook_likes                     0.20830704             0.70266263
+## facenumber_in_poster                     0.08664693            -0.03459643
+## title_year                               0.12100232             0.39486654
+## gross                                    0.24087860             0.47498691
+## budget                                   0.03002407             0.10727273
+##                              duration num_voted_users
+## imdb_score                 0.35983137      0.47411454
+## director_facebook_likes    0.18098298      0.30228315
+## cast_total_facebook_likes  0.12345912      0.25372185
+## num_critic_for_reviews     0.23531057      0.59913124
+## duration                   1.00000000      0.34139968
+## num_voted_users            0.34139968      1.00000000
+## actor_1_facebook_likes     0.08660067      0.18352422
+## actor_2_facebook_likes     0.13158851      0.24912230
+## actor_3_facebook_likes     0.12769476      0.27147300
+## movie_facebook_likes       0.21729069      0.52043775
+## facenumber_in_poster       0.03108111     -0.03245149
+## title_year                -0.12977329      0.01647955
+## gross                      0.24956101      0.63000838
+## budget                     0.06900564      0.06825888
+##                           actor_1_facebook_likes actor_2_facebook_likes
+## imdb_score                            0.09225238             0.10193664
+## director_facebook_likes               0.09128625             0.11812015
+## cast_total_facebook_likes             0.94520338             0.64285379
+## num_critic_for_reviews                0.17259837             0.25950076
+## duration                              0.08660067             0.13158851
+## num_voted_users                       0.18352422             0.24912230
+## actor_1_facebook_likes                1.00000000             0.39188591
+## actor_2_facebook_likes                0.39188591             1.00000000
+## actor_3_facebook_likes                0.25375682             0.55451732
+## movie_facebook_likes                  0.13278479             0.23505325
+## facenumber_in_poster                  0.06462380             0.07300377
+## title_year                            0.09160937             0.11637574
+## gross                                 0.14894100             0.25707865
+## budget                                0.01750381             0.03691932
+##                           actor_3_facebook_likes movie_facebook_likes
+## imdb_score                            0.06470126           0.27761324
+## director_facebook_likes               0.11932301           0.16413999
+## cast_total_facebook_likes             0.49015939           0.20830704
+## num_critic_for_reviews                0.25754977           0.70266263
+## duration                              0.12769476           0.21729069
+## num_voted_users                       0.27147300           0.52043775
+## actor_1_facebook_likes                0.25375682           0.13278479
+## actor_2_facebook_likes                0.55451732           0.23505325
+## actor_3_facebook_likes                1.00000000           0.27395487
+## movie_facebook_likes                  0.27395487           1.00000000
+## facenumber_in_poster                  0.10459151           0.01562827
+## title_year                            0.11268361           0.29737364
+## gross                                 0.30358512           0.37144324
+## budget                                0.04117271           0.05389931
+##                           facenumber_in_poster  title_year       gross
+## imdb_score                         -0.06629431 -0.12929506  0.21153313
+## director_facebook_likes            -0.04743442 -0.04611660  0.14239829
+## cast_total_facebook_likes           0.08664693  0.12100232  0.24087860
+## num_critic_for_reviews             -0.03459643  0.39486654  0.47498691
+## duration                            0.03108111 -0.12977329  0.24956101
+## num_voted_users                    -0.03245149  0.01647955  0.63000838
+## actor_1_facebook_likes              0.06462380  0.09160937  0.14894100
+## actor_2_facebook_likes              0.07300377  0.11637574  0.25707865
+## actor_3_facebook_likes              0.10459151  0.11268361  0.30358512
+## movie_facebook_likes                0.01562827  0.29737364  0.37144324
+## facenumber_in_poster                1.00000000  0.07004736 -0.03111307
+## title_year                          0.07004736  1.00000000  0.04672214
+## gross                              -0.03111307  0.04672214  1.00000000
+## budget                             -0.02214450  0.04499513  0.10165795
+##                                budget
+## imdb_score                 0.02896085
+## director_facebook_likes    0.01920008
+## cast_total_facebook_likes  0.03002407
+## num_critic_for_reviews     0.10727273
+## duration                   0.06900564
+## num_voted_users            0.06825888
+## actor_1_facebook_likes     0.01750381
+## actor_2_facebook_likes     0.03691932
+## actor_3_facebook_likes     0.04117271
+## movie_facebook_likes       0.05389931
+## facenumber_in_poster      -0.02214450
+## title_year                 0.04499513
+## gross                      0.10165795
+## budget                     1.00000000</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">corrplot</span>(M, <span class="dt">method =</span> <span class="st">&quot;ellipse&quot;</span>)</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">corrplot</span>(M, <span class="dt">method =</span> <span class="st">&quot;number&quot;</span>)</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-40-2.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">corrplot</span>(M, <span class="dt">method =</span> <span class="st">&quot;circle&quot;</span>)</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-40-3.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">corrplot</span>(M, <span class="dt">method =</span> <span class="st">&quot;pie&quot;</span>)</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-40-4.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">corrplot</span>(M, <span class="dt">method =</span> <span class="st">&quot;square&quot;</span>)</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-40-5.png" width="672" /></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="data-transformation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="summary.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/04-EDA.Rmd",
+"text": "Edit"
+},
+"download": ["DAWR E-BOOK.pdf", "DAWR E-BOOK.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

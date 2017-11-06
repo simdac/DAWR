@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Data Analysis with R</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook.">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Data Analysis with R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Data Analysis with R" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="intro.html">
+<link rel="next" href="data-transformation.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="https://simdaclub.com/">SIM Data Analysis Club</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> R 101</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#working-directory"><i class="fa fa-check"></i><b>1.1</b> Working Directory</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#basic-arithmetic"><i class="fa fa-check"></i><b>1.2</b> Basic Arithmetic</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#defining-variables-objects"><i class="fa fa-check"></i><b>1.3</b> Defining Variables &amp; Objects</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#vector"><i class="fa fa-check"></i><b>1.4</b> Vector</a></li>
+<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#types-of-object"><i class="fa fa-check"></i><b>1.5</b> Types of object</a></li>
+<li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#list"><i class="fa fa-check"></i><b>1.6</b> List</a></li>
+<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#matrices"><i class="fa fa-check"></i><b>1.7</b> Matrices</a></li>
+<li class="chapter" data-level="1.8" data-path="intro.html"><a href="intro.html#data-frame"><i class="fa fa-check"></i><b>1.8</b> Data Frame</a></li>
+<li class="chapter" data-level="1.9" data-path="intro.html"><a href="intro.html#packages"><i class="fa fa-check"></i><b>1.9</b> Packages</a></li>
+<li class="chapter" data-level="1.10" data-path="intro.html"><a href="intro.html#control-structures"><i class="fa fa-check"></i><b>1.10</b> Control Structures</a><ul>
+<li class="chapter" data-level="1.10.1" data-path="intro.html"><a href="intro.html#decision-making"><i class="fa fa-check"></i><b>1.10.1</b> Decision Making</a></li>
+<li class="chapter" data-level="1.10.2" data-path="intro.html"><a href="intro.html#loops"><i class="fa fa-check"></i><b>1.10.2</b> Loops</a></li>
+<li class="chapter" data-level="1.10.3" data-path="intro.html"><a href="intro.html#combining-decision-making-with-loops."><i class="fa fa-check"></i><b>1.10.3</b> Combining Decision making with loops.</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="data-visualisation.html"><a href="data-visualisation.html"><i class="fa fa-check"></i><b>2</b> Data Visualisation</a><ul>
+<li class="chapter" data-level="2.1" data-path="data-visualisation.html"><a href="data-visualisation.html#initialise-your-environment"><i class="fa fa-check"></i><b>2.1</b> Initialise your environment</a></li>
+<li class="chapter" data-level="2.2" data-path="data-visualisation.html"><a href="data-visualisation.html#import-the-dataset"><i class="fa fa-check"></i><b>2.2</b> Import the Dataset</a></li>
+<li class="chapter" data-level="2.3" data-path="data-visualisation.html"><a href="data-visualisation.html#introduction"><i class="fa fa-check"></i><b>2.3</b> Introduction</a></li>
+<li class="chapter" data-level="2.4" data-path="data-visualisation.html"><a href="data-visualisation.html#aesthetic"><i class="fa fa-check"></i><b>2.4</b> Aesthetic</a></li>
+<li class="chapter" data-level="2.5" data-path="data-visualisation.html"><a href="data-visualisation.html#geometric"><i class="fa fa-check"></i><b>2.5</b> Geometric</a></li>
+<li class="chapter" data-level="2.6" data-path="data-visualisation.html"><a href="data-visualisation.html#statistic"><i class="fa fa-check"></i><b>2.6</b> Statistic</a></li>
+<li class="chapter" data-level="2.7" data-path="data-visualisation.html"><a href="data-visualisation.html#positions"><i class="fa fa-check"></i><b>2.7</b> Positions</a></li>
+<li class="chapter" data-level="2.8" data-path="data-visualisation.html"><a href="data-visualisation.html#facets"><i class="fa fa-check"></i><b>2.8</b> Facets</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data Transformation</a><ul>
+<li class="chapter" data-level="3.1" data-path="data-transformation.html"><a href="data-transformation.html#initialise-your-environment-1"><i class="fa fa-check"></i><b>3.1</b> Initialise your environment</a></li>
+<li class="chapter" data-level="3.2" data-path="data-transformation.html"><a href="data-transformation.html#import-the-dataset-1"><i class="fa fa-check"></i><b>3.2</b> Import the Dataset</a></li>
+<li class="chapter" data-level="3.3" data-path="data-transformation.html"><a href="data-transformation.html#filter"><i class="fa fa-check"></i><b>3.3</b> Filter</a></li>
+<li class="chapter" data-level="3.4" data-path="data-transformation.html"><a href="data-transformation.html#arrange"><i class="fa fa-check"></i><b>3.4</b> Arrange</a></li>
+<li class="chapter" data-level="3.5" data-path="data-transformation.html"><a href="data-transformation.html#select"><i class="fa fa-check"></i><b>3.5</b> Select</a></li>
+<li class="chapter" data-level="3.6" data-path="data-transformation.html"><a href="data-transformation.html#mutate"><i class="fa fa-check"></i><b>3.6</b> Mutate</a></li>
+<li class="chapter" data-level="3.7" data-path="data-transformation.html"><a href="data-transformation.html#summarise"><i class="fa fa-check"></i><b>3.7</b> Summarise</a></li>
+<li class="chapter" data-level="3.8" data-path="data-transformation.html"><a href="data-transformation.html#group-by"><i class="fa fa-check"></i><b>3.8</b> Group By</a></li>
+<li class="chapter" data-level="3.9" data-path="data-transformation.html"><a href="data-transformation.html#data-pipelines"><i class="fa fa-check"></i><b>3.9</b> Data Pipelines</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html"><i class="fa fa-check"></i><b>4</b> Exploratory Data Analysis</a><ul>
+<li class="chapter" data-level="4.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#movies"><i class="fa fa-check"></i><b>4.1</b> Movies</a></li>
+<li class="chapter" data-level="4.2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#initialise-your-environment-2"><i class="fa fa-check"></i><b>4.2</b> Initialise your environment</a></li>
+<li class="chapter" data-level="4.3" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#import-the-dataset-2"><i class="fa fa-check"></i><b>4.3</b> Import the Dataset</a></li>
+<li class="chapter" data-level="4.4" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#imdb-scores-vs-number-of-faces-in-movies-poster"><i class="fa fa-check"></i><b>4.4</b> IMDB Scores VS Number of faces in movies poster</a></li>
+<li class="chapter" data-level="4.5" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#imdb-scores-vs-country"><i class="fa fa-check"></i><b>4.5</b> IMDB Scores VS Country</a></li>
+<li class="chapter" data-level="4.6" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#imdb-scores-vs-movies-year"><i class="fa fa-check"></i><b>4.6</b> IMDB Scores VS Movies year</a></li>
+<li class="chapter" data-level="4.7" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#imdb-scores-vs-movie-facebook-popularity"><i class="fa fa-check"></i><b>4.7</b> IMDB Scores VS Movie Facebook Popularity</a></li>
+<li class="chapter" data-level="4.8" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#imdb-score-vs-director-facebook-popularity"><i class="fa fa-check"></i><b>4.8</b> IMDB score VS Director Facebook Popularity</a></li>
+<li class="chapter" data-level="4.9" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#correlation-analysis"><i class="fa fa-check"></i><b>4.9</b> Correlation analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="summary.html"><a href="summary.html"><i class="fa fa-check"></i><b>5</b> Summary</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Analysis with R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data-visualisation" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Data Visualisation</h1>
+<p>This chapter will focus on purely on data visualisation in R. We wont be using the base R plotting function. Instead we will be using a package called <strong>ggplot2</strong> which is based on the grammer of graphics to do up some simple and elegant plots.</p>
+<p>ggplot2 is build upon a 2 level data hierachy:</p>
+<p>Default plot <code>ggplot()</code> requires:</p>
+<ol style="list-style-type: decimal">
+<li>Data Set</li>
+<li>Aesthetic mapping</li>
+</ol>
+<p>Layers comprises of the 5 key components:</p>
+<ol style="list-style-type: decimal">
+<li>Data</li>
+<li>Aesthetic Mappings</li>
+<li>Geometric Objects</li>
+<li>Statistics Transformation</li>
+<li>Position</li>
+</ol>
+<p>There are more but will will focus mainly on this first.</p>
+<p>For illustrative and teaching purposes, we will be using the pokemon datasets, which is gotten from <a href="https://www.kaggle.com/abcsds/pokemon" class="uri">https://www.kaggle.com/abcsds/pokemon</a>.</p>
+<p>Before we can start, we have to download and load the required packages as well as load the csv files.</p>
+<div id="initialise-your-environment" class="section level2">
+<h2><span class="header-section-number">2.1</span> Initialise your environment</h2>
+<p><strong>Install the following package</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># you only need to install it once</span>
+<span class="kw">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</code></pre></div>
+<p><strong>Load the packages into RStudio</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ggplot2)</code></pre></div>
+<p>ggplot2 comes with a few loaded packages.</p>
+<p>To check them out simply type the following command</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="dt">package =</span> <span class="st">&quot;ggplot2&quot;</span>)</code></pre></div>
+<p>To show all the available function within dplyr,</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ls</span>(<span class="st">&quot;package:ggplot2&quot;</span>)</code></pre></div>
+</div>
+<div id="import-the-dataset" class="section level2">
+<h2><span class="header-section-number">2.2</span> Import the Dataset</h2>
+<p>Before we can import the Data Sets, we have to ensure the the .csv file is the same project folder. we can first check if we are in the correct directory by using <code>getwd()</code></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># check if the dataset is in the same project folder</span>
+<span class="kw">getwd</span>()</code></pre></div>
+<p>If it is not in the same project folder, we can set it manually by passing the correct path into the function <code>setwd()</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">setwd</span>(<span class="st">&quot;       &quot;</span>)</code></pre></div>
+<p>Once these are settled, we can import the datasets using the <code>read.csv()</code> function.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># import the dataset</span>
+pokemon &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;Pokemon.csv&quot;</span>)</code></pre></div>
+<p>We can do some prelimanry check on the attributes of the datasets</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(pokemon)
+<span class="kw">dim</span>(pokemon)
+<span class="kw">names</span>(pokemon)
+<span class="kw">str</span>(pokemon)</code></pre></div>
+</div>
+<div id="introduction" class="section level2">
+<h2><span class="header-section-number">2.3</span> Introduction</h2>
+<p><code>ggplot()</code> and <code>ggplot(data = pokemon)</code> when called produces a blank grey plot with nothing on it yet.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>()</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon)</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-9-2.png" width="672" /></p>
+<p>By associating a mapping to it such as assigning the column <code>Attack</code> in the pokemon data frame to the x-axis and <code>Defense</code> to the y-axis, we get a blank plot with labelling.</p>
+<p>However, there is still no visual aspect of it yet.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon, 
+       <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense))</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p>What we have to do next is to assign a geometric object to it the plot, say point, if we want to draw a scatter plot.</p>
+<p>By default, a full ggplot2 specification of the scatterplot of Attack vs Defense is,</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>() +
+<span class="st">  </span><span class="kw">layer</span>(<span class="dt">data =</span> pokemon, 
+        <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense),
+        <span class="dt">geom =</span> <span class="st">&quot;point&quot;</span>, 
+        <span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>, 
+        <span class="dt">position =</span> <span class="st">&quot;identity&quot;</span>) +
+<span class="st">  </span><span class="kw">scale_y_continuous</span>() +
+<span class="st">  </span><span class="kw">scale_x_continuous</span>() +
+<span class="st">  </span><span class="kw">coord_cartesian</span>() </code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>The following does the same thing as above except now we have uses the function <code>geom_point()</code>, which is a wrapper for the whole chunk of text above.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>() +
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">data =</span> pokemon, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense))</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+</div>
+<div id="aesthetic" class="section level2">
+<h2><span class="header-section-number">2.4</span> Aesthetic</h2>
+<p>Aesthetics are the visual properties property of the objects in your plot.</p>
+<p>Various aesthetic properties available are:</p>
+<ul>
+<li>Colour</li>
+<li>Shape</li>
+<li>Transparncy</li>
+<li>Size</li>
+</ul>
+<p>There are many more as we shall see later on.</p>
+<p>We can either set aesthetics automatically or manually.</p>
+<p><strong>Automatically (Mapping)</strong></p>
+<p>For automatic mapping, the properties goes inside of <code>aes()</code>.</p>
+<p><strong>Colour</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense, 
+                           <span class="dt">colour =</span> <span class="kw">factor</span>(Generation)))</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><strong>Shape</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense, 
+                           <span class="dt">shape =</span> <span class="kw">factor</span>(Generation)))</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p><strong>Transparency (alpha)</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense, 
+                           <span class="dt">alpha =</span> <span class="kw">factor</span>(Generation)))</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p><strong>Size</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense, 
+                           <span class="dt">size =</span> <span class="kw">factor</span>(Generation)))</code></pre></div>
+<pre><code>## Warning: Using size for a discrete variable is not advised.</code></pre>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p><strong>Manually (Setting)</strong></p>
+<p>For manual assignment, the properties goes outside of <code>aes()</code>.</p>
+<p><strong>Colour</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense),  
+             <span class="dt">colour =</span> <span class="st">&quot;blue&quot;</span>)</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p><strong>Shape</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense),  
+             <span class="dt">shape =</span> <span class="dv">1</span>)</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p>We can specify custom shape using quote eg. “&amp;”</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense), 
+             <span class="dt">shape =</span> <span class="st">&quot;&amp;&quot;</span>)</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p><strong>Transparency (alpha)</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense),  
+             <span class="dt">alpha =</span> <span class="fl">0.1</span>)</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p><strong>Size</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense),  
+             <span class="dt">size =</span> <span class="dv">10</span>)</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p>The following properties allows us to customised our point object:</p>
+<ul>
+<li>colour &lt;-&gt; border colour</li>
+<li>fill &lt;-&gt; colour within the shape</li>
+<li>size &lt;-&gt; shape size</li>
+<li>stroke &lt;-&gt; border size</li>
+</ul>
+<p><strong>Exercise</strong></p>
+<ol style="list-style-type: decimal">
+<li>Try manually specifying the various colour attributes.</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(Attack, Defense),
+             <span class="dt">shape =</span> <span class="dv">21</span>,
+             <span class="dt">colour =</span> <span class="st">&quot;red&quot;</span>,
+             <span class="dt">fill =</span> <span class="st">&quot;black&quot;</span>, 
+             <span class="dt">stroke =</span> <span class="dv">2</span>,
+             <span class="dt">size =</span> <span class="dv">4</span>)</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+</div>
+<div id="geometric" class="section level2">
+<h2><span class="header-section-number">2.5</span> Geometric</h2>
+<p>Geometric specifies the type of chart that we want to draw like objects like points, bar, line, polygon etc</p>
+<p>This shows a list of all the available geom object in ggplot2</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ls</span>(<span class="st">&quot;package:ggplot2&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;^geom&quot;</span>)</code></pre></div>
+<pre><code>##  [1] &quot;geom_abline&quot;     &quot;geom_area&quot;       &quot;geom_bar&quot;       
+##  [4] &quot;geom_bin2d&quot;      &quot;geom_blank&quot;      &quot;geom_boxplot&quot;   
+##  [7] &quot;geom_col&quot;        &quot;geom_contour&quot;    &quot;geom_count&quot;     
+## [10] &quot;geom_crossbar&quot;   &quot;geom_curve&quot;      &quot;geom_density&quot;   
+## [13] &quot;geom_density_2d&quot; &quot;geom_density2d&quot;  &quot;geom_dotplot&quot;   
+## [16] &quot;geom_errorbar&quot;   &quot;geom_errorbarh&quot;  &quot;geom_freqpoly&quot;  
+## [19] &quot;geom_hex&quot;        &quot;geom_histogram&quot;  &quot;geom_hline&quot;     
+## [22] &quot;geom_jitter&quot;     &quot;geom_label&quot;      &quot;geom_line&quot;      
+## [25] &quot;geom_linerange&quot;  &quot;geom_map&quot;        &quot;geom_path&quot;      
+## [28] &quot;geom_point&quot;      &quot;geom_pointrange&quot; &quot;geom_polygon&quot;   
+## [31] &quot;geom_qq&quot;         &quot;geom_quantile&quot;   &quot;geom_raster&quot;    
+## [34] &quot;geom_rect&quot;       &quot;geom_ribbon&quot;     &quot;geom_rug&quot;       
+## [37] &quot;geom_segment&quot;    &quot;geom_smooth&quot;     &quot;geom_spoke&quot;     
+## [40] &quot;geom_step&quot;       &quot;geom_text&quot;       &quot;geom_tile&quot;      
+## [43] &quot;geom_violin&quot;     &quot;geom_vline&quot;</code></pre>
+<p>So far we have seen geom_point. Other kinds of geometric objects are</p>
+<p><strong>Bar Chart</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(Type1))</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<p><strong>Box Plot</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +
+<span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Type1, <span class="dt">y =</span> Total))</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<p><strong>Dot Plot</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +
+<span class="st">  </span><span class="kw">geom_dotplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Type1))</code></pre></div>
+<pre><code>## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<p>Each geom can only display certain aesthetics.</p>
+<p><code>geom_point()</code> uses the <code>shape</code> aesthetic but doesnt have <code>linetype</code> as one of its aesthetics.</p>
+<p><strong>shape = Generation</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense,  
+                           <span class="dt">shape =</span> <span class="kw">factor</span>(Generation)))</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+<p><strong>linetype = Generation</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense,  
+                            <span class="dt">linetype =</span> <span class="kw">factor</span>(Generation)))</code></pre></div>
+<pre><code>## Warning: Ignoring unknown aesthetics: linetype</code></pre>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<p>We can also add multiple layer either locally or globally or both.</p>
+<p><strong>Locally</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>() +
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">data =</span> pokemon, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense)) +
+<span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">data =</span> pokemon, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense))</code></pre></div>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39;</code></pre>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<p><strong>Globally</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense)) +
+<span class="st">  </span><span class="kw">geom_point</span>() +
+<span class="st">  </span><span class="kw">geom_smooth</span>() </code></pre></div>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39;</code></pre>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
+<p><strong>Both Locally and Globally</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense)) +
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">shape =</span> <span class="kw">factor</span>(Generation))) +
+<span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">linetype =</span> <span class="kw">factor</span>(Generation))) </code></pre></div>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39;</code></pre>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
+<p>We can also use group and colour aesthetic together with multiple layers.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense, <span class="dt">colour =</span> <span class="kw">factor</span>(Generation))) +
+<span class="st">  </span><span class="kw">geom_point</span>() +
+<span class="st">  </span><span class="kw">geom_smooth</span>(<span class="kw">aes</span>(<span class="dt">group =</span> <span class="kw">factor</span>(Generation)))</code></pre></div>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39;</code></pre>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
+</div>
+<div id="statistic" class="section level2">
+<h2><span class="header-section-number">2.6</span> Statistic</h2>
+<p>Every Geom have an associated statistic to it. However, sometimes we wish to specify a different statistical funcition. The Statistic Layer allows us to this.</p>
+<p>This shows a list of all the available stat object in ggplot2</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ls</span>(<span class="st">&quot;package:ggplot2&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;^stat&quot;</span>)</code></pre></div>
+<pre><code>##  [1] &quot;stat_bin&quot;         &quot;stat_bin_2d&quot;      &quot;stat_bin_hex&quot;    
+##  [4] &quot;stat_bin2d&quot;       &quot;stat_binhex&quot;      &quot;stat_boxplot&quot;    
+##  [7] &quot;stat_contour&quot;     &quot;stat_count&quot;       &quot;stat_density&quot;    
+## [10] &quot;stat_density_2d&quot;  &quot;stat_density2d&quot;   &quot;stat_ecdf&quot;       
+## [13] &quot;stat_ellipse&quot;     &quot;stat_function&quot;    &quot;stat_identity&quot;   
+## [16] &quot;stat_qq&quot;          &quot;stat_quantile&quot;    &quot;stat_smooth&quot;     
+## [19] &quot;stat_spoke&quot;       &quot;stat_sum&quot;         &quot;stat_summary&quot;    
+## [22] &quot;stat_summary_2d&quot;  &quot;stat_summary_bin&quot; &quot;stat_summary_hex&quot;
+## [25] &quot;stat_summary2d&quot;   &quot;stat_unique&quot;      &quot;stat_ydensity&quot;</code></pre>
+<p><code>geom_bar()</code> uses “bar” as its geom &amp; “count” as its stat</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Type1))</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
+<p><code>stat_count()</code> uses “count” as its stat and “bar” as its geom.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +
+<span class="st">  </span><span class="kw">stat_count</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Type1))</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
+<p>By changing the default statistic manually, we’l get a new geom, called <code>geom_histogram()</code>. Lets examine this step by step.</p>
+<p>Initially, the plot looks like</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Total))</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
+<p>Now we change to “bin”</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Total), <span class="dt">stat =</span> <span class="st">&quot;bin&quot;</span>)</code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
+<p>Which is same as..</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +
+<span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Total))</code></pre></div>
+<pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
+</div>
+<div id="positions" class="section level2">
+<h2><span class="header-section-number">2.7</span> Positions</h2>
+<p>The default position is “identity” for most geom. however we can specify the type of position we want manually.</p>
+<p>This shows a list of all the available position object in ggplot2</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ls</span>(<span class="st">&quot;package:ggplot2&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;^position&quot;</span>)</code></pre></div>
+<pre><code>## [1] &quot;position_dodge&quot;       &quot;position_fill&quot;        &quot;position_identity&quot;   
+## [4] &quot;position_jitter&quot;      &quot;position_jitterdodge&quot; &quot;position_nudge&quot;      
+## [7] &quot;position_stack&quot;</code></pre>
+<p>First and foremost, to add colour to bar chart, we can specify the colour within the bar aesthetic. however this isnt really a useful visualisation to us.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Type1, <span class="dt">colour =</span> <span class="kw">factor</span>(Generation)))</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
+<p>We can instead specify fill over colour.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Type1, <span class="dt">fill =</span> <span class="kw">factor</span>(Generation)))</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-41-1.png" width="672" /></p>
+<p>There are 3 adjustments that primarily apply to bars. They are :</p>
+<ul>
+<li><ol style="list-style-type: decimal">
+<li><code>position_stack()</code></li>
+</ol></li>
+<li><ol start="2" style="list-style-type: decimal">
+<li><code>position_dodge()</code></li>
+</ol></li>
+<li><ol start="3" style="list-style-type: decimal">
+<li><code>position_fill()</code></li>
+</ol></li>
+</ul>
+<p><strong>Stack</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Type1, <span class="dt">fill =</span> <span class="kw">factor</span>(Generation))) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">position =</span> <span class="st">&quot;stack&quot;</span>) </code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
+<p><strong>Dodge</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Type1, <span class="dt">fill =</span> <span class="kw">factor</span>(Generation))) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">position =</span> <span class="st">&quot;dodge&quot;</span>)</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-43-1.png" width="672" /></p>
+<p><strong>Fill</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Type1, <span class="dt">fill =</span> <span class="kw">factor</span>(Generation))) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">position =</span> <span class="st">&quot;fill&quot;</span>)</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-44-1.png" width="672" /></p>
+</div>
+<div id="facets" class="section level2">
+<h2><span class="header-section-number">2.8</span> Facets</h2>
+<p>Allows us to splits up a plot in to multiple subplots.</p>
+<p>This shows a list of all the available facet object in ggplot2</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ls</span>(<span class="st">&quot;package:ggplot2&quot;</span>, <span class="dt">pattern =</span> <span class="st">&quot;^facet&quot;</span>)</code></pre></div>
+<pre><code>## [1] &quot;facet_grid&quot; &quot;facet_null&quot; &quot;facet_wrap&quot;</code></pre>
+<p>There are 2 types of facets:</p>
+<ul>
+<li><ol style="list-style-type: decimal">
+<li><code>facet_wrap()</code></li>
+</ol></li>
+<li><ol start="2" style="list-style-type: decimal">
+<li><code>facet_grid()</code></li>
+</ol></li>
+</ul>
+<p>Both uses the formula notation, ~ , as the 1st arguments. Both variables should be discrete/categorical and place before and after the <code>~</code>.</p>
+<p><strong><code>facet_wrap()</code></strong> splits up our plot by a single variable.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense)) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">facet_wrap</span>( ~<span class="st"> </span>Type1, <span class="dt">nrow =</span> <span class="dv">1</span>)</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-46-1.png" width="672" /></p>
+<p><strong><code>facet_grid()</code></strong> splits up our plot according to 2 variables.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense)) +<span class="st"> </span>
+<span class="st">  </span><span class="kw">facet_grid</span>(Type2 ~<span class="st"> </span>Type1)</code></pre></div>
+<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-47-1.png" width="672" /></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-transformation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-Data-Visualisation.Rmd",
+"text": "Edit"
+},
+"download": ["DAWR E-BOOK.pdf", "DAWR E-BOOK.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

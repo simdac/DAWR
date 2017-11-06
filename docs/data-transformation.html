@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Data Analysis with R</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook.">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Data Analysis with R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Data Analysis with R" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="data-visualisation.html">
+<link rel="next" href="exploratory-data-analysis.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="https://simdaclub.com/">SIM Data Analysis Club</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> R 101</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#working-directory"><i class="fa fa-check"></i><b>1.1</b> Working Directory</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#basic-arithmetic"><i class="fa fa-check"></i><b>1.2</b> Basic Arithmetic</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#defining-variables-objects"><i class="fa fa-check"></i><b>1.3</b> Defining Variables &amp; Objects</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#vector"><i class="fa fa-check"></i><b>1.4</b> Vector</a></li>
+<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#types-of-object"><i class="fa fa-check"></i><b>1.5</b> Types of object</a></li>
+<li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#list"><i class="fa fa-check"></i><b>1.6</b> List</a></li>
+<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#matrices"><i class="fa fa-check"></i><b>1.7</b> Matrices</a></li>
+<li class="chapter" data-level="1.8" data-path="intro.html"><a href="intro.html#data-frame"><i class="fa fa-check"></i><b>1.8</b> Data Frame</a></li>
+<li class="chapter" data-level="1.9" data-path="intro.html"><a href="intro.html#packages"><i class="fa fa-check"></i><b>1.9</b> Packages</a></li>
+<li class="chapter" data-level="1.10" data-path="intro.html"><a href="intro.html#control-structures"><i class="fa fa-check"></i><b>1.10</b> Control Structures</a><ul>
+<li class="chapter" data-level="1.10.1" data-path="intro.html"><a href="intro.html#decision-making"><i class="fa fa-check"></i><b>1.10.1</b> Decision Making</a></li>
+<li class="chapter" data-level="1.10.2" data-path="intro.html"><a href="intro.html#loops"><i class="fa fa-check"></i><b>1.10.2</b> Loops</a></li>
+<li class="chapter" data-level="1.10.3" data-path="intro.html"><a href="intro.html#combining-decision-making-with-loops."><i class="fa fa-check"></i><b>1.10.3</b> Combining Decision making with loops.</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="data-visualisation.html"><a href="data-visualisation.html"><i class="fa fa-check"></i><b>2</b> Data Visualisation</a><ul>
+<li class="chapter" data-level="2.1" data-path="data-visualisation.html"><a href="data-visualisation.html#initialise-your-environment"><i class="fa fa-check"></i><b>2.1</b> Initialise your environment</a></li>
+<li class="chapter" data-level="2.2" data-path="data-visualisation.html"><a href="data-visualisation.html#import-the-dataset"><i class="fa fa-check"></i><b>2.2</b> Import the Dataset</a></li>
+<li class="chapter" data-level="2.3" data-path="data-visualisation.html"><a href="data-visualisation.html#introduction"><i class="fa fa-check"></i><b>2.3</b> Introduction</a></li>
+<li class="chapter" data-level="2.4" data-path="data-visualisation.html"><a href="data-visualisation.html#aesthetic"><i class="fa fa-check"></i><b>2.4</b> Aesthetic</a></li>
+<li class="chapter" data-level="2.5" data-path="data-visualisation.html"><a href="data-visualisation.html#geometric"><i class="fa fa-check"></i><b>2.5</b> Geometric</a></li>
+<li class="chapter" data-level="2.6" data-path="data-visualisation.html"><a href="data-visualisation.html#statistic"><i class="fa fa-check"></i><b>2.6</b> Statistic</a></li>
+<li class="chapter" data-level="2.7" data-path="data-visualisation.html"><a href="data-visualisation.html#positions"><i class="fa fa-check"></i><b>2.7</b> Positions</a></li>
+<li class="chapter" data-level="2.8" data-path="data-visualisation.html"><a href="data-visualisation.html#facets"><i class="fa fa-check"></i><b>2.8</b> Facets</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data Transformation</a><ul>
+<li class="chapter" data-level="3.1" data-path="data-transformation.html"><a href="data-transformation.html#initialise-your-environment-1"><i class="fa fa-check"></i><b>3.1</b> Initialise your environment</a></li>
+<li class="chapter" data-level="3.2" data-path="data-transformation.html"><a href="data-transformation.html#import-the-dataset-1"><i class="fa fa-check"></i><b>3.2</b> Import the Dataset</a></li>
+<li class="chapter" data-level="3.3" data-path="data-transformation.html"><a href="data-transformation.html#filter"><i class="fa fa-check"></i><b>3.3</b> Filter</a></li>
+<li class="chapter" data-level="3.4" data-path="data-transformation.html"><a href="data-transformation.html#arrange"><i class="fa fa-check"></i><b>3.4</b> Arrange</a></li>
+<li class="chapter" data-level="3.5" data-path="data-transformation.html"><a href="data-transformation.html#select"><i class="fa fa-check"></i><b>3.5</b> Select</a></li>
+<li class="chapter" data-level="3.6" data-path="data-transformation.html"><a href="data-transformation.html#mutate"><i class="fa fa-check"></i><b>3.6</b> Mutate</a></li>
+<li class="chapter" data-level="3.7" data-path="data-transformation.html"><a href="data-transformation.html#summarise"><i class="fa fa-check"></i><b>3.7</b> Summarise</a></li>
+<li class="chapter" data-level="3.8" data-path="data-transformation.html"><a href="data-transformation.html#group-by"><i class="fa fa-check"></i><b>3.8</b> Group By</a></li>
+<li class="chapter" data-level="3.9" data-path="data-transformation.html"><a href="data-transformation.html#data-pipelines"><i class="fa fa-check"></i><b>3.9</b> Data Pipelines</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html"><i class="fa fa-check"></i><b>4</b> Exploratory Data Analysis</a><ul>
+<li class="chapter" data-level="4.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#movies"><i class="fa fa-check"></i><b>4.1</b> Movies</a></li>
+<li class="chapter" data-level="4.2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#initialise-your-environment-2"><i class="fa fa-check"></i><b>4.2</b> Initialise your environment</a></li>
+<li class="chapter" data-level="4.3" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#import-the-dataset-2"><i class="fa fa-check"></i><b>4.3</b> Import the Dataset</a></li>
+<li class="chapter" data-level="4.4" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#imdb-scores-vs-number-of-faces-in-movies-poster"><i class="fa fa-check"></i><b>4.4</b> IMDB Scores VS Number of faces in movies poster</a></li>
+<li class="chapter" data-level="4.5" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#imdb-scores-vs-country"><i class="fa fa-check"></i><b>4.5</b> IMDB Scores VS Country</a></li>
+<li class="chapter" data-level="4.6" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#imdb-scores-vs-movies-year"><i class="fa fa-check"></i><b>4.6</b> IMDB Scores VS Movies year</a></li>
+<li class="chapter" data-level="4.7" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#imdb-scores-vs-movie-facebook-popularity"><i class="fa fa-check"></i><b>4.7</b> IMDB Scores VS Movie Facebook Popularity</a></li>
+<li class="chapter" data-level="4.8" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#imdb-score-vs-director-facebook-popularity"><i class="fa fa-check"></i><b>4.8</b> IMDB score VS Director Facebook Popularity</a></li>
+<li class="chapter" data-level="4.9" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#correlation-analysis"><i class="fa fa-check"></i><b>4.9</b> Correlation analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="summary.html"><a href="summary.html"><i class="fa fa-check"></i><b>5</b> Summary</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Analysis with R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data-transformation" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Data Transformation</h1>
+<p>We will be using dplyr for this chapter only.</p>
+<p><strong>dplyr</strong> allows us to manipulate data sets by passing SQL like query.</p>
+<p>We will only be focusing on 5 function in this package.</p>
+<ol style="list-style-type: decimal">
+<li>filter()<br />
+</li>
+<li>arrange()<br />
+</li>
+<li>select()<br />
+</li>
+<li>mutate()</li>
+<li>summarise()</li>
+</ol>
+<p>Additionally, these functions also works in conjunction with</p>
+<ol start="6" style="list-style-type: decimal">
+<li>group_by()</li>
+<li>Data Pipelines ( %&gt;% )</li>
+</ol>
+<p>The sales dataset have been gotten from the open data website, <a href="https://data.gov.sg/" class="uri">https://data.gov.sg/</a>.</p>
+<p>Before we can start, we have to download and load the required packages as well as load the csv files.</p>
+<div id="initialise-your-environment-1" class="section level2">
+<h2><span class="header-section-number">3.1</span> Initialise your environment</h2>
+<p><strong>Install the following package</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># you only need to install it once</span>
+<span class="kw">install.packages</span>(<span class="st">&quot;dplyr&quot;</span>)</code></pre></div>
+<p><strong>Load the packages into RStudio</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(dplyr)</code></pre></div>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<p>dplyr comes with a few loaded packages.</p>
+<p>To check them out simply type the following command</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">data</span>(<span class="dt">package =</span> <span class="st">&quot;dplyr&quot;</span>)</code></pre></div>
+<p>To show all the available function within dplyr,</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ls</span>(<span class="st">&quot;package:dplyr&quot;</span>)</code></pre></div>
+</div>
+<div id="import-the-dataset-1" class="section level2">
+<h2><span class="header-section-number">3.2</span> Import the Dataset</h2>
+<p>Before we can import the Data Sets, we have to ensure the the .csv file is the same project folder. we can first check if we are in the correct directory by using <code>getwd()</code></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># check if the dataset is in the same project folder</span>
+<span class="kw">getwd</span>()</code></pre></div>
+<p>If it is not in the same project folder, we can set it manually by passing the correct path into the function <code>setwd()</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">setwd</span>(<span class="st">&quot;       &quot;</span>)</code></pre></div>
+<p>Once these are settled, we can import the datasets using the <code>read.csv()</code> function.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># import the dataset</span>
+sales &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="dt">file =</span> <span class="st">&quot;Properties and Facilities Sales.csv&quot;</span>)</code></pre></div>
+<p>We can do some prelimanry check on the attributes of the datasets</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(sales)
+<span class="kw">dim</span>(sales)
+<span class="kw">names</span>(sales)
+<span class="kw">str</span>(sales)
+<span class="kw">glimpse</span>(sales) <span class="co"># dplyr method</span></code></pre></div>
+<p>As the table is large and hard to read, dplyr has a function called <code>as_data_frame()</code> that allow us to convert it to a tidier format.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sales &lt;-<span class="st"> </span><span class="kw">as_data_frame</span>(sales) <span class="co"># note that we have overide the old variable</span>
+sales</code></pre></div>
+<pre><code>## # A tibble: 416 x 6
+##     year      types                           property_type category
+##    &lt;int&gt;     &lt;fctr&gt;                                  &lt;fctr&gt;   &lt;fctr&gt;
+##  1  2006 Commercial                 Shops and Eating Houses     Sold
+##  2  2006 Commercial                 Shops and Eating Houses   Rented
+##  3  2006 Commercial                                 Offices     Sold
+##  4  2006 Commercial                                 Offices   Rented
+##  5  2006 Commercial                Supermarkets &amp; Emporiums     Sold
+##  6  2006 Commercial                Supermarkets &amp; Emporiums   Rented
+##  7  2006 Commercial Civil Defence Shelters (commercial use)     Sold
+##  8  2006 Commercial Civil Defence Shelters (commercial use)   Rented
+##  9  2006 Commercial                 Shops and Eating Houses     Sold
+## 10  2007 Commercial                 Shops and Eating Houses   Rented
+## # ... with 406 more rows, and 2 more variables: subcategory &lt;fctr&gt;,
+## #   no_of_units &lt;int&gt;</code></pre>
+<p>We can check data type of the sales datasets using <code>class()</code> function</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(sales)</code></pre></div>
+<pre><code>## [1] &quot;tbl_df&quot;     &quot;tbl&quot;        &quot;data.frame&quot;</code></pre>
+<p><em>Note the difference between <code>as.data.frame() and as_data_frame()</code></em></p>
+</div>
+<div id="filter" class="section level2">
+<h2><span class="header-section-number">3.3</span> Filter</h2>
+<p><code>filter()</code> allows us to filter out specific rows based on some specified conditions</p>
+<p>We can list out all the different type of properties under the column <code>type</code></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">unique</span>(sales[<span class="st">&quot;types&quot;</span>])</code></pre></div>
+<pre><code>## # A tibble: 3 x 1
+##         types
+##        &lt;fctr&gt;
+## 1  Commercial
+## 2  Industrial
+## 3 Residential</code></pre>
+<p>Now lets filter out all the Residential Properties</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">filter</span>(sales, types ==<span class="st"> &quot;Residential&quot;</span>)</code></pre></div>
+<pre><code>## Warning: package &#39;bindrcpp&#39; was built under R version 3.3.3</code></pre>
+<pre><code>## # A tibble: 202 x 6
+##     year       types property_type category
+##    &lt;int&gt;      &lt;fctr&gt;        &lt;fctr&gt;   &lt;fctr&gt;
+##  1  2006 Residential           HDB     Sold
+##  2  2006 Residential           HDB     Sold
+##  3  2006 Residential           HDB     Sold
+##  4  2006 Residential           HDB     Sold
+##  5  2006 Residential           HDB     Sold
+##  6  2006 Residential           HDB     Sold
+##  7  2006 Residential           HDB     Sold
+##  8  2006 Residential           HDB   Rented
+##  9  2006 Residential           HDB   Rented
+## 10  2006 Residential           HDB   Rented
+## # ... with 192 more rows, and 2 more variables: subcategory &lt;fctr&gt;,
+## #   no_of_units &lt;int&gt;</code></pre>
+<p>Filtering can also be done through logical operator like,</p>
+<ul>
+<li>And – <code>&amp;</code></li>
+<li>Or – <code>|</code></li>
+</ul>
+<p>Filter all types == “Residential”</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">filter</span>(sales, types ==<span class="st"> &quot;Residential&quot;</span> &amp;<span class="st"> </span>category ==<span class="st"> &quot;Sold&quot;</span>)</code></pre></div>
+<pre><code>## # A tibble: 101 x 6
+##     year       types property_type category
+##    &lt;int&gt;      &lt;fctr&gt;        &lt;fctr&gt;   &lt;fctr&gt;
+##  1  2006 Residential           HDB     Sold
+##  2  2006 Residential           HDB     Sold
+##  3  2006 Residential           HDB     Sold
+##  4  2006 Residential           HDB     Sold
+##  5  2006 Residential           HDB     Sold
+##  6  2006 Residential           HDB     Sold
+##  7  2006 Residential           HDB     Sold
+##  8  2006 Residential          DBSS     Sold
+##  9  2006 Residential          DBSS     Sold
+## 10  2006 Residential          DBSS     Sold
+## # ... with 91 more rows, and 2 more variables: subcategory &lt;fctr&gt;,
+## #   no_of_units &lt;int&gt;</code></pre>
+<p>Filter all types == “HDB”</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">filter</span>(sales, property_type ==<span class="st"> &quot;HDB&quot;</span> |<span class="st"> </span>property_type ==<span class="st"> &quot;DBSS&quot;</span>)</code></pre></div>
+<pre><code>## # A tibble: 202 x 6
+##     year       types property_type category
+##    &lt;int&gt;      &lt;fctr&gt;        &lt;fctr&gt;   &lt;fctr&gt;
+##  1  2006 Residential           HDB     Sold
+##  2  2006 Residential           HDB     Sold
+##  3  2006 Residential           HDB     Sold
+##  4  2006 Residential           HDB     Sold
+##  5  2006 Residential           HDB     Sold
+##  6  2006 Residential           HDB     Sold
+##  7  2006 Residential           HDB     Sold
+##  8  2006 Residential           HDB   Rented
+##  9  2006 Residential           HDB   Rented
+## 10  2006 Residential           HDB   Rented
+## # ... with 192 more rows, and 2 more variables: subcategory &lt;fctr&gt;,
+## #   no_of_units &lt;int&gt;</code></pre>
+<p><strong>Exercise</strong></p>
+<p>You can also use filter with &gt;, &lt;, &gt;=, &lt;=,</p>
+<ol style="list-style-type: decimal">
+<li>Filter Out all the HDB sold in the year 2009</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">filter</span>(sales, year ==<span class="st"> &quot;2009&quot;</span>, property_type ==<span class="st"> &quot;HDB&quot;</span>)</code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>Filter out all rented HDB units that are 5 Room Flats</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">filter</span>(sales, property_type ==<span class="st"> &quot;HDB&quot;</span>, category ==<span class="st"> &quot;Rented&quot;</span>, subcategory ==<span class="st"> &quot;5-room flats&quot;</span>)</code></pre></div>
+</div>
+<div id="arrange" class="section level2">
+<h2><span class="header-section-number">3.4</span> Arrange</h2>
+<p><code>arrange()</code> allows us to arrange or sort the rows based on the columns that we select.</p>
+<p>Lets arrange by property type.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">arrange</span>(sales, property_type)</code></pre></div>
+<pre><code>## # A tibble: 416 x 6
+##     year      types         property_type category subcategory no_of_units
+##    &lt;int&gt;     &lt;fctr&gt;                &lt;fctr&gt;   &lt;fctr&gt;      &lt;fctr&gt;       &lt;int&gt;
+##  1  2006 Industrial Canteens/Eating House     Sold          NA          NA
+##  2  2006 Industrial Canteens/Eating House   Rented          NA           5
+##  3  2007 Industrial Canteens/Eating House     Sold          NA          NA
+##  4  2007 Industrial Canteens/Eating House   Rented          NA           1
+##  5  2008 Industrial Canteens/Eating House     Sold          NA          NA
+##  6  2008 Industrial Canteens/Eating House   Rented          NA           0
+##  7  2009 Industrial Canteens/Eating House     Sold          NA          NA
+##  8  2009 Industrial Canteens/Eating House   Rented          NA           0
+##  9  2010 Industrial Canteens/Eating House     Sold          NA          NA
+## 10  2010 Industrial Canteens/Eating House   Rented          NA           0
+## # ... with 406 more rows</code></pre>
+<p>We can also arrange by multiple columns.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">arrange</span>(sales, property_type, category)</code></pre></div>
+<pre><code>## # A tibble: 416 x 6
+##     year      types         property_type category subcategory no_of_units
+##    &lt;int&gt;     &lt;fctr&gt;                &lt;fctr&gt;   &lt;fctr&gt;      &lt;fctr&gt;       &lt;int&gt;
+##  1  2006 Industrial Canteens/Eating House   Rented          NA           5
+##  2  2007 Industrial Canteens/Eating House   Rented          NA           1
+##  3  2008 Industrial Canteens/Eating House   Rented          NA           0
+##  4  2009 Industrial Canteens/Eating House   Rented          NA           0
+##  5  2010 Industrial Canteens/Eating House   Rented          NA           0
+##  6  2011 Industrial Canteens/Eating House   Rented          NA           0
+##  7  2012 Industrial Canteens/Eating House   Rented          NA           0
+##  8  2013 Industrial Canteens/Eating House   Rented          NA           1
+##  9  2014 Industrial Canteens/Eating House   Rented          NA           0
+## 10  2015 Industrial Canteens/Eating House   Rented          NA           0
+## # ... with 406 more rows</code></pre>
+<p>To sort in descending order, we can use the <code>desc()</code> function.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">arrange</span>(sales, <span class="kw">desc</span>(property_type))</code></pre></div>
+<pre><code>## # A tibble: 416 x 6
+##     year      types     property_type category subcategory no_of_units
+##    &lt;int&gt;     &lt;fctr&gt;            &lt;fctr&gt;   &lt;fctr&gt;      &lt;fctr&gt;       &lt;int&gt;
+##  1  2014 Industrial Wholesale Centres     Sold          NA          NA
+##  2  2014 Industrial Wholesale Centres   Rented          NA           8
+##  3  2015 Industrial Wholesale Centres     Sold          NA          NA
+##  4  2015 Industrial Wholesale Centres   Rented          NA          15
+##  5  2006 Industrial         Warehouse     Sold          NA          NA
+##  6  2006 Industrial         Warehouse   Rented          NA           5
+##  7  2007 Industrial         Warehouse     Sold          NA          NA
+##  8  2007 Industrial         Warehouse   Rented          NA           8
+##  9  2008 Industrial         Warehouse     Sold          NA          NA
+## 10  2008 Industrial         Warehouse   Rented          NA           0
+## # ... with 406 more rows</code></pre>
+<p>We can also sort in both ascending and descending order.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">arrange</span>(sales, <span class="kw">desc</span>(property_type), category)</code></pre></div>
+<pre><code>## # A tibble: 416 x 6
+##     year      types     property_type category subcategory no_of_units
+##    &lt;int&gt;     &lt;fctr&gt;            &lt;fctr&gt;   &lt;fctr&gt;      &lt;fctr&gt;       &lt;int&gt;
+##  1  2014 Industrial Wholesale Centres   Rented          NA           8
+##  2  2015 Industrial Wholesale Centres   Rented          NA          15
+##  3  2014 Industrial Wholesale Centres     Sold          NA          NA
+##  4  2015 Industrial Wholesale Centres     Sold          NA          NA
+##  5  2006 Industrial         Warehouse   Rented          NA           5
+##  6  2007 Industrial         Warehouse   Rented          NA           8
+##  7  2008 Industrial         Warehouse   Rented          NA           0
+##  8  2009 Industrial         Warehouse   Rented          NA           1
+##  9  2010 Industrial         Warehouse   Rented          NA           0
+## 10  2011 Industrial         Warehouse   Rented          NA           0
+## # ... with 406 more rows</code></pre>
+<p><strong>Exercise</strong></p>
+<ol style="list-style-type: decimal">
+<li>Sort in descending order the total number of units sold</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">arrange</span>(sales, <span class="kw">desc</span>(no_of_units))</code></pre></div>
+<ol start="2" style="list-style-type: decimal">
+<li>Sort in descending order the total number of units sold by year</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">arrange</span>(sales, year, <span class="kw">desc</span>(no_of_units))</code></pre></div>
+</div>
+<div id="select" class="section level2">
+<h2><span class="header-section-number">3.5</span> Select</h2>
+<p><code>select()</code> allows us to select specific columns that we want to scope in.</p>
+<p>Lets says we want to only scope into or select the column, <code>no_of_units</code>,</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">select</span>(sales, no_of_units)</code></pre></div>
+<pre><code>## # A tibble: 416 x 1
+##    no_of_units
+##          &lt;int&gt;
+##  1          NA
+##  2         287
+##  3          NA
+##  4         112
+##  5          NA
+##  6           6
+##  7          NA
+##  8          23
+##  9          17
+## 10         330
+## # ... with 406 more rows</code></pre>
+<p>We are not confine to selecting a single column. to select multiple column, all we just need to do is specify all the column name that we want.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">select</span>(sales, year, property_type, no_of_units)</code></pre></div>
+<pre><code>## # A tibble: 416 x 3
+##     year                           property_type no_of_units
+##    &lt;int&gt;                                  &lt;fctr&gt;       &lt;int&gt;
+##  1  2006                 Shops and Eating Houses          NA
+##  2  2006                 Shops and Eating Houses         287
+##  3  2006                                 Offices          NA
+##  4  2006                                 Offices         112
+##  5  2006                Supermarkets &amp; Emporiums          NA
+##  6  2006                Supermarkets &amp; Emporiums           6
+##  7  2006 Civil Defence Shelters (commercial use)          NA
+##  8  2006 Civil Defence Shelters (commercial use)          23
+##  9  2006                 Shops and Eating Houses          17
+## 10  2007                 Shops and Eating Houses         330
+## # ... with 406 more rows</code></pre>
+<p>Alternatively, instead of specifying the column that we want, we can also select the columns by dropping the column the we want. we can do that by appending a negative sign, infront on the column that we wish to drop.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">select</span>(sales, -types, -category, -subcategory)</code></pre></div>
+<pre><code>## # A tibble: 416 x 3
+##     year                           property_type no_of_units
+##    &lt;int&gt;                                  &lt;fctr&gt;       &lt;int&gt;
+##  1  2006                 Shops and Eating Houses          NA
+##  2  2006                 Shops and Eating Houses         287
+##  3  2006                                 Offices          NA
+##  4  2006                                 Offices         112
+##  5  2006                Supermarkets &amp; Emporiums          NA
+##  6  2006                Supermarkets &amp; Emporiums           6
+##  7  2006 Civil Defence Shelters (commercial use)          NA
+##  8  2006 Civil Defence Shelters (commercial use)          23
+##  9  2006                 Shops and Eating Houses          17
+## 10  2007                 Shops and Eating Houses         330
+## # ... with 406 more rows</code></pre>
+<p>Alternative to <code>arrange()</code>, we can also re-arrange coloumns through the select function as well. we used the function `everything()’ to specify the remaining column that we have no selected.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">select</span>(sales, no_of_units, <span class="kw">everything</span>())</code></pre></div>
+<pre><code>## # A tibble: 416 x 6
+##    no_of_units  year      types                           property_type
+##          &lt;int&gt; &lt;int&gt;     &lt;fctr&gt;                                  &lt;fctr&gt;
+##  1          NA  2006 Commercial                 Shops and Eating Houses
+##  2         287  2006 Commercial                 Shops and Eating Houses
+##  3          NA  2006 Commercial                                 Offices
+##  4         112  2006 Commercial                                 Offices
+##  5          NA  2006 Commercial                Supermarkets &amp; Emporiums
+##  6           6  2006 Commercial                Supermarkets &amp; Emporiums
+##  7          NA  2006 Commercial Civil Defence Shelters (commercial use)
+##  8          23  2006 Commercial Civil Defence Shelters (commercial use)
+##  9          17  2006 Commercial                 Shops and Eating Houses
+## 10         330  2007 Commercial                 Shops and Eating Houses
+## # ... with 406 more rows, and 2 more variables: category &lt;fctr&gt;,
+## #   subcategory &lt;fctr&gt;</code></pre>
+</div>
+<div id="mutate" class="section level2">
+<h2><span class="header-section-number">3.6</span> Mutate</h2>
+<p><code>mutate()</code> allows us to add or modify a new coloumn to any datasets. we are also able to use any mathematical function or any user-defined function within the <code>mutate()</code> function.</p>
+<p>Lets start by adding a new column which calculate’s the total number of units sold for Residential types only.</p>
+<p>To do this we have to first filter out all types that is “Residential”</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">residential &lt;-<span class="st"> </span><span class="kw">filter</span>(sales, types ==<span class="st"> &quot;Residential&quot;</span>)</code></pre></div>
+<p>Next we can add a new column by giving a name “total_units”.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mutate</span>(residential, <span class="dt">total_units =</span> <span class="kw">sum</span>(no_of_units))</code></pre></div>
+<pre><code>## # A tibble: 202 x 7
+##     year       types property_type category
+##    &lt;int&gt;      &lt;fctr&gt;        &lt;fctr&gt;   &lt;fctr&gt;
+##  1  2006 Residential           HDB     Sold
+##  2  2006 Residential           HDB     Sold
+##  3  2006 Residential           HDB     Sold
+##  4  2006 Residential           HDB     Sold
+##  5  2006 Residential           HDB     Sold
+##  6  2006 Residential           HDB     Sold
+##  7  2006 Residential           HDB     Sold
+##  8  2006 Residential           HDB   Rented
+##  9  2006 Residential           HDB   Rented
+## 10  2006 Residential           HDB   Rented
+## # ... with 192 more rows, and 3 more variables: subcategory &lt;fctr&gt;,
+## #   no_of_units &lt;int&gt;, total_units &lt;int&gt;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mutate</span>(residential, <span class="dt">total_units =</span> <span class="kw">sum</span>(no_of_units, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</code></pre></div>
+<pre><code>## # A tibble: 202 x 7
+##     year       types property_type category
+##    &lt;int&gt;      &lt;fctr&gt;        &lt;fctr&gt;   &lt;fctr&gt;
+##  1  2006 Residential           HDB     Sold
+##  2  2006 Residential           HDB     Sold
+##  3  2006 Residential           HDB     Sold
+##  4  2006 Residential           HDB     Sold
+##  5  2006 Residential           HDB     Sold
+##  6  2006 Residential           HDB     Sold
+##  7  2006 Residential           HDB     Sold
+##  8  2006 Residential           HDB   Rented
+##  9  2006 Residential           HDB   Rented
+## 10  2006 Residential           HDB   Rented
+## # ... with 192 more rows, and 3 more variables: subcategory &lt;fctr&gt;,
+## #   no_of_units &lt;int&gt;, total_units &lt;int&gt;</code></pre>
+<p><strong>Exercise</strong></p>
+<ol style="list-style-type: decimal">
+<li>Add a column, “total_sold”, which calculate the total number of sold properties and a column, “total_rented”, which calculate the total number of rented properties.</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mutate</span>(sales, <span class="dt">total_sold =</span> <span class="kw">sum</span>(category ==<span class="st"> &quot;Sold&quot;</span>),
+              <span class="dt">total_rented =</span> <span class="kw">sum</span>(category ==<span class="st"> &quot;Rented&quot;</span>))</code></pre></div>
+</div>
+<div id="summarise" class="section level2">
+<h2><span class="header-section-number">3.7</span> Summarise</h2>
+<p><code>summarise()</code> allows us to summarise a data based on specific function like finding the sum, mean, median, percentile etc.</p>
+<p><strong>Sum</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summarise</span>(sales, <span class="dt">Sum =</span> <span class="kw">sum</span>(no_of_units, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</code></pre></div>
+<pre><code>## # A tibble: 1 x 1
+##      Sum
+##    &lt;int&gt;
+## 1 165807</code></pre>
+<p><strong>Mean</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summarise</span>(sales, <span class="dt">Mean =</span> <span class="kw">mean</span>(no_of_units, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</code></pre></div>
+<pre><code>## # A tibble: 1 x 1
+##       Mean
+##      &lt;dbl&gt;
+## 1 594.2903</code></pre>
+<p><strong>Median</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summarise</span>(sales, <span class="dt">median =</span> <span class="kw">median</span>(no_of_units, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</code></pre></div>
+<pre><code>## # A tibble: 1 x 1
+##   median
+##    &lt;int&gt;
+## 1     20</code></pre>
+<p><strong>Quantile</strong></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summarise</span>(sales, <span class="dt">Quantile =</span> <span class="kw">quantile</span>(no_of_units, <span class="fl">0.9</span>, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</code></pre></div>
+<pre><code>## # A tibble: 1 x 1
+##   Quantile
+##      &lt;dbl&gt;
+## 1   1704.8</code></pre>
+<p>Alternatively, we can put them all into a single function</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summarise</span>(sales, <span class="dt">Sum =</span> <span class="kw">sum</span>(no_of_units, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),
+                 <span class="dt">Mean =</span> <span class="kw">mean</span>(no_of_units, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),
+                 <span class="dt">Median =</span> <span class="kw">median</span>(no_of_units, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),
+                 <span class="dt">Quantile =</span> <span class="kw">quantile</span>(no_of_units, <span class="fl">0.9</span>, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>))</code></pre></div>
+<pre><code>## # A tibble: 1 x 4
+##      Sum     Mean Median Quantile
+##    &lt;int&gt;    &lt;dbl&gt;  &lt;int&gt;    &lt;dbl&gt;
+## 1 165807 594.2903     20   1704.8</code></pre>
+<p>Summarise and Mutate by itself is not interesting. we have to pair it with <code>group_by()</code> to derive meaningful insights from the datasets.</p>
+</div>
+<div id="group-by" class="section level2">
+<h2><span class="header-section-number">3.8</span> Group By</h2>
+<p><code>group_by()</code> allows us to group the data set by certain column. It is, however, better to pair it with <code>summarise()</code>, <code>mutate()</code> and <code>filter()</code>.</p>
+<p>Supposed we want to find the proportion of each property types to the total property, we 1st have to group them by the property type.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">temp &lt;-<span class="st"> </span><span class="kw">group_by</span>(sales, property_type)
+temp</code></pre></div>
+<pre><code>## # A tibble: 416 x 6
+## # Groups:   property_type [15]
+##     year      types                           property_type category
+##    &lt;int&gt;     &lt;fctr&gt;                                  &lt;fctr&gt;   &lt;fctr&gt;
+##  1  2006 Commercial                 Shops and Eating Houses     Sold
+##  2  2006 Commercial                 Shops and Eating Houses   Rented
+##  3  2006 Commercial                                 Offices     Sold
+##  4  2006 Commercial                                 Offices   Rented
+##  5  2006 Commercial                Supermarkets &amp; Emporiums     Sold
+##  6  2006 Commercial                Supermarkets &amp; Emporiums   Rented
+##  7  2006 Commercial Civil Defence Shelters (commercial use)     Sold
+##  8  2006 Commercial Civil Defence Shelters (commercial use)   Rented
+##  9  2006 Commercial                 Shops and Eating Houses     Sold
+## 10  2007 Commercial                 Shops and Eating Houses   Rented
+## # ... with 406 more rows, and 2 more variables: subcategory &lt;fctr&gt;,
+## #   no_of_units &lt;int&gt;</code></pre>
+<p>*Notice that <code>group_by()</code> doesnt do anything visually to the datasets.</p>
+<p>Then, we summarise them by counting the total number for each property type.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">temp &lt;-<span class="st"> </span><span class="kw">summarise</span>(temp, <span class="dt">n =</span> <span class="kw">n</span>())</code></pre></div>
+<p>Finally, we have to ungroup them before we can add a new column to sum the total property available.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">temp &lt;-<span class="st"> </span><span class="kw">ungroup</span>(temp)
+temp &lt;-<span class="st"> </span><span class="kw">mutate</span>(temp, <span class="dt">total =</span> <span class="kw">sum</span>(n),
+                <span class="dt">prop =</span> (n/total)*<span class="dv">100</span>)
+temp</code></pre></div>
+<pre><code>## # A tibble: 15 x 4
+##                              property_type     n total       prop
+##                                     &lt;fctr&gt; &lt;int&gt; &lt;int&gt;      &lt;dbl&gt;
+##  1                   Canteens/Eating House    20   416  4.8076923
+##  2 Civil Defence Shelters (commercial use)    20   416  4.8076923
+##  3                                    DBSS    60   416 14.4230769
+##  4               Flatted/Ramp-up Factories    12   416  2.8846154
+##  5                                     HDB   142   416 34.1346154
+##  6                    Industrial Complexes     8   416  1.9230769
+##  7                        Industrial Shops    20   416  4.8076923
+##  8                                 Offices    20   416  4.8076923
+##  9                     Prototype Factories    20   416  4.8076923
+## 10                 Shops and Eating Houses    20   416  4.8076923
+## 11                Supermarkets &amp; Emporiums    20   416  4.8076923
+## 12                       Terrace Workshops    20   416  4.8076923
+## 13                                TOL Land    10   416  2.4038462
+## 14                               Warehouse    20   416  4.8076923
+## 15                       Wholesale Centres     4   416  0.9615385</code></pre>
+<p><code>ungroup()</code> is a function that allows us to return to the original data with no particular restriction (ie. without any prior grouping)</p>
+</div>
+<div id="data-pipelines" class="section level2">
+<h2><span class="header-section-number">3.9</span> Data Pipelines</h2>
+<p>In the previous example, we had to constantly assign the output to a new variable (temp) before we can chain multiple output together.</p>
+<p>Lets put it all together to have a better view of the flow/process.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">temp &lt;-<span class="st"> </span><span class="kw">group_by</span>(sales, property_type)
+temp &lt;-<span class="st"> </span><span class="kw">summarise</span>(temp, <span class="dt">n =</span> <span class="kw">n</span>())
+temp &lt;-<span class="st"> </span><span class="kw">ungroup</span>(temp)
+temp &lt;-<span class="st"> </span><span class="kw">mutate</span>(temp, <span class="dt">total =</span> <span class="kw">sum</span>(n),
+               <span class="dt">prop =</span> (n/total)*<span class="dv">100</span>)
+temp</code></pre></div>
+<pre><code>## # A tibble: 15 x 4
+##                              property_type     n total       prop
+##                                     &lt;fctr&gt; &lt;int&gt; &lt;int&gt;      &lt;dbl&gt;
+##  1                   Canteens/Eating House    20   416  4.8076923
+##  2 Civil Defence Shelters (commercial use)    20   416  4.8076923
+##  3                                    DBSS    60   416 14.4230769
+##  4               Flatted/Ramp-up Factories    12   416  2.8846154
+##  5                                     HDB   142   416 34.1346154
+##  6                    Industrial Complexes     8   416  1.9230769
+##  7                        Industrial Shops    20   416  4.8076923
+##  8                                 Offices    20   416  4.8076923
+##  9                     Prototype Factories    20   416  4.8076923
+## 10                 Shops and Eating Houses    20   416  4.8076923
+## 11                Supermarkets &amp; Emporiums    20   416  4.8076923
+## 12                       Terrace Workshops    20   416  4.8076923
+## 13                                TOL Land    10   416  2.4038462
+## 14                               Warehouse    20   416  4.8076923
+## 15                       Wholesale Centres     4   416  0.9615385</code></pre>
+<p>An easier Method would be to use the Pipe Operator, %&gt;%.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">temp_pipe &lt;-<span class="st"> </span>sales %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">group_by</span>(property_type) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">n =</span> <span class="kw">n</span>()) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">ungroup</span>() %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">total =</span> <span class="kw">sum</span>(n), 
+         <span class="dt">prop =</span> (n/total)*<span class="dv">100</span>)
+temp_pipe</code></pre></div>
+<pre><code>## # A tibble: 15 x 4
+##                              property_type     n total       prop
+##                                     &lt;fctr&gt; &lt;int&gt; &lt;int&gt;      &lt;dbl&gt;
+##  1                   Canteens/Eating House    20   416  4.8076923
+##  2 Civil Defence Shelters (commercial use)    20   416  4.8076923
+##  3                                    DBSS    60   416 14.4230769
+##  4               Flatted/Ramp-up Factories    12   416  2.8846154
+##  5                                     HDB   142   416 34.1346154
+##  6                    Industrial Complexes     8   416  1.9230769
+##  7                        Industrial Shops    20   416  4.8076923
+##  8                                 Offices    20   416  4.8076923
+##  9                     Prototype Factories    20   416  4.8076923
+## 10                 Shops and Eating Houses    20   416  4.8076923
+## 11                Supermarkets &amp; Emporiums    20   416  4.8076923
+## 12                       Terrace Workshops    20   416  4.8076923
+## 13                                TOL Land    10   416  2.4038462
+## 14                               Warehouse    20   416  4.8076923
+## 15                       Wholesale Centres     4   416  0.9615385</code></pre>
+<p>This allows us to better see the chaining of operation much easier from a top down approach as well as remove the hassle of constantly assigning to a variable.</p>
+<p>Notice that the output for both temp and temp_pipe are the same. we can easily check it with the function <code>identical()</code></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">identical</span>(temp, temp_pipe)</code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p><strong>dplyr</strong> also provides us with a function count() which does the exact same thing as <code>summarise(n = n())</code> in a much compact way.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">temp_pipe &lt;-<span class="st"> </span>sales %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">group_by</span>(property_type) %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">count</span>() %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">ungroup</span>() %&gt;%<span class="st"> </span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">total =</span> <span class="kw">sum</span>(n), 
+         <span class="dt">prop =</span> (n/total)*<span class="dv">100</span>)
+temp_pipe</code></pre></div>
+<pre><code>## # A tibble: 15 x 4
+##                              property_type     n total       prop
+##                                     &lt;fctr&gt; &lt;int&gt; &lt;int&gt;      &lt;dbl&gt;
+##  1                   Canteens/Eating House    20   416  4.8076923
+##  2 Civil Defence Shelters (commercial use)    20   416  4.8076923
+##  3                                    DBSS    60   416 14.4230769
+##  4               Flatted/Ramp-up Factories    12   416  2.8846154
+##  5                                     HDB   142   416 34.1346154
+##  6                    Industrial Complexes     8   416  1.9230769
+##  7                        Industrial Shops    20   416  4.8076923
+##  8                                 Offices    20   416  4.8076923
+##  9                     Prototype Factories    20   416  4.8076923
+## 10                 Shops and Eating Houses    20   416  4.8076923
+## 11                Supermarkets &amp; Emporiums    20   416  4.8076923
+## 12                       Terrace Workshops    20   416  4.8076923
+## 13                                TOL Land    10   416  2.4038462
+## 14                               Warehouse    20   416  4.8076923
+## 15                       Wholesale Centres     4   416  0.9615385</code></pre>
+<p><strong>Exercise</strong></p>
+<ol style="list-style-type: decimal">
+<li></li>
+<li>dplyr offers a few inbuilt data sets to play around with. Try out the starwars dataset and see what kind of information we can derive from it.</li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">starwars</code></pre></div>
+<pre><code>## # A tibble: 87 x 13
+##                  name height  mass    hair_color  skin_color eye_color
+##                 &lt;chr&gt;  &lt;int&gt; &lt;dbl&gt;         &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt;
+##  1     Luke Skywalker    172    77         blond        fair      blue
+##  2              C-3PO    167    75          &lt;NA&gt;        gold    yellow
+##  3              R2-D2     96    32          &lt;NA&gt; white, blue       red
+##  4        Darth Vader    202   136          none       white    yellow
+##  5        Leia Organa    150    49         brown       light     brown
+##  6          Owen Lars    178   120   brown, grey       light      blue
+##  7 Beru Whitesun lars    165    75         brown       light      blue
+##  8              R5-D4     97    32          &lt;NA&gt;  white, red       red
+##  9  Biggs Darklighter    183    84         black       light     brown
+## 10     Obi-Wan Kenobi    182    77 auburn, white        fair blue-gray
+## # ... with 77 more rows, and 7 more variables: birth_year &lt;dbl&gt;,
+## #   gender &lt;chr&gt;, homeworld &lt;chr&gt;, species &lt;chr&gt;, films &lt;list&gt;,
+## #   vehicles &lt;list&gt;, starships &lt;list&gt;</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="data-visualisation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="exploratory-data-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/03-Data-Transformation.Rmd",
+"text": "Edit"
+},
+"download": ["DAWR E-BOOK.pdf", "DAWR E-BOOK.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

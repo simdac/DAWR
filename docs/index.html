@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Data Analysis with R</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook.">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Data Analysis with R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Data Analysis with R" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+
+<link rel="next" href="intro.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="https://simdaclub.com/">SIM Data Analysis Club</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> R 101</a><ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#working-directory"><i class="fa fa-check"></i><b>1.1</b> Working Directory</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#basic-arithmetic"><i class="fa fa-check"></i><b>1.2</b> Basic Arithmetic</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#defining-variables-objects"><i class="fa fa-check"></i><b>1.3</b> Defining Variables &amp; Objects</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#vector"><i class="fa fa-check"></i><b>1.4</b> Vector</a></li>
+<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#types-of-object"><i class="fa fa-check"></i><b>1.5</b> Types of object</a></li>
+<li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#list"><i class="fa fa-check"></i><b>1.6</b> List</a></li>
+<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#matrices"><i class="fa fa-check"></i><b>1.7</b> Matrices</a></li>
+<li class="chapter" data-level="1.8" data-path="intro.html"><a href="intro.html#data-frame"><i class="fa fa-check"></i><b>1.8</b> Data Frame</a></li>
+<li class="chapter" data-level="1.9" data-path="intro.html"><a href="intro.html#packages"><i class="fa fa-check"></i><b>1.9</b> Packages</a></li>
+<li class="chapter" data-level="1.10" data-path="intro.html"><a href="intro.html#control-structures"><i class="fa fa-check"></i><b>1.10</b> Control Structures</a><ul>
+<li class="chapter" data-level="1.10.1" data-path="intro.html"><a href="intro.html#decision-making"><i class="fa fa-check"></i><b>1.10.1</b> Decision Making</a></li>
+<li class="chapter" data-level="1.10.2" data-path="intro.html"><a href="intro.html#loops"><i class="fa fa-check"></i><b>1.10.2</b> Loops</a></li>
+<li class="chapter" data-level="1.10.3" data-path="intro.html"><a href="intro.html#combining-decision-making-with-loops."><i class="fa fa-check"></i><b>1.10.3</b> Combining Decision making with loops.</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="data-visualisation.html"><a href="data-visualisation.html"><i class="fa fa-check"></i><b>2</b> Data Visualisation</a><ul>
+<li class="chapter" data-level="2.1" data-path="data-visualisation.html"><a href="data-visualisation.html#initialise-your-environment"><i class="fa fa-check"></i><b>2.1</b> Initialise your environment</a></li>
+<li class="chapter" data-level="2.2" data-path="data-visualisation.html"><a href="data-visualisation.html#import-the-dataset"><i class="fa fa-check"></i><b>2.2</b> Import the Dataset</a></li>
+<li class="chapter" data-level="2.3" data-path="data-visualisation.html"><a href="data-visualisation.html#introduction"><i class="fa fa-check"></i><b>2.3</b> Introduction</a></li>
+<li class="chapter" data-level="2.4" data-path="data-visualisation.html"><a href="data-visualisation.html#aesthetic"><i class="fa fa-check"></i><b>2.4</b> Aesthetic</a></li>
+<li class="chapter" data-level="2.5" data-path="data-visualisation.html"><a href="data-visualisation.html#geometric"><i class="fa fa-check"></i><b>2.5</b> Geometric</a></li>
+<li class="chapter" data-level="2.6" data-path="data-visualisation.html"><a href="data-visualisation.html#statistic"><i class="fa fa-check"></i><b>2.6</b> Statistic</a></li>
+<li class="chapter" data-level="2.7" data-path="data-visualisation.html"><a href="data-visualisation.html#positions"><i class="fa fa-check"></i><b>2.7</b> Positions</a></li>
+<li class="chapter" data-level="2.8" data-path="data-visualisation.html"><a href="data-visualisation.html#facets"><i class="fa fa-check"></i><b>2.8</b> Facets</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data Transformation</a><ul>
+<li class="chapter" data-level="3.1" data-path="data-transformation.html"><a href="data-transformation.html#initialise-your-environment-1"><i class="fa fa-check"></i><b>3.1</b> Initialise your environment</a></li>
+<li class="chapter" data-level="3.2" data-path="data-transformation.html"><a href="data-transformation.html#import-the-dataset-1"><i class="fa fa-check"></i><b>3.2</b> Import the Dataset</a></li>
+<li class="chapter" data-level="3.3" data-path="data-transformation.html"><a href="data-transformation.html#filter"><i class="fa fa-check"></i><b>3.3</b> Filter</a></li>
+<li class="chapter" data-level="3.4" data-path="data-transformation.html"><a href="data-transformation.html#arrange"><i class="fa fa-check"></i><b>3.4</b> Arrange</a></li>
+<li class="chapter" data-level="3.5" data-path="data-transformation.html"><a href="data-transformation.html#select"><i class="fa fa-check"></i><b>3.5</b> Select</a></li>
+<li class="chapter" data-level="3.6" data-path="data-transformation.html"><a href="data-transformation.html#mutate"><i class="fa fa-check"></i><b>3.6</b> Mutate</a></li>
+<li class="chapter" data-level="3.7" data-path="data-transformation.html"><a href="data-transformation.html#summarise"><i class="fa fa-check"></i><b>3.7</b> Summarise</a></li>
+<li class="chapter" data-level="3.8" data-path="data-transformation.html"><a href="data-transformation.html#group-by"><i class="fa fa-check"></i><b>3.8</b> Group By</a></li>
+<li class="chapter" data-level="3.9" data-path="data-transformation.html"><a href="data-transformation.html#data-pipelines"><i class="fa fa-check"></i><b>3.9</b> Data Pipelines</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html"><i class="fa fa-check"></i><b>4</b> Exploratory Data Analysis</a><ul>
+<li class="chapter" data-level="4.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#movies"><i class="fa fa-check"></i><b>4.1</b> Movies</a></li>
+<li class="chapter" data-level="4.2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#initialise-your-environment-2"><i class="fa fa-check"></i><b>4.2</b> Initialise your environment</a></li>
+<li class="chapter" data-level="4.3" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#import-the-dataset-2"><i class="fa fa-check"></i><b>4.3</b> Import the Dataset</a></li>
+<li class="chapter" data-level="4.4" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#imdb-scores-vs-number-of-faces-in-movies-poster"><i class="fa fa-check"></i><b>4.4</b> IMDB Scores VS Number of faces in movies poster</a></li>
+<li class="chapter" data-level="4.5" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#imdb-scores-vs-country"><i class="fa fa-check"></i><b>4.5</b> IMDB Scores VS Country</a></li>
+<li class="chapter" data-level="4.6" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#imdb-scores-vs-movies-year"><i class="fa fa-check"></i><b>4.6</b> IMDB Scores VS Movies year</a></li>
+<li class="chapter" data-level="4.7" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#imdb-scores-vs-movie-facebook-popularity"><i class="fa fa-check"></i><b>4.7</b> IMDB Scores VS Movie Facebook Popularity</a></li>
+<li class="chapter" data-level="4.8" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#imdb-score-vs-director-facebook-popularity"><i class="fa fa-check"></i><b>4.8</b> IMDB score VS Director Facebook Popularity</a></li>
+<li class="chapter" data-level="4.9" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#correlation-analysis"><i class="fa fa-check"></i><b>4.9</b> Correlation analysis</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="summary.html"><a href="summary.html"><i class="fa fa-check"></i><b>5</b> Summary</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Analysis with R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Data Analysis with R</h1>
+<h4 class="author"><em><h6>
+Data Analysis Club (DAC)
+</h6>
+<h6>
+Alvin Phee, Curriculum Director (2017)
+</h6></em></h4>
+<h4 class="date"><em>25th Oct 2017 - 2nd Nov 2017</em></h4>
+</div>
+<div id="welcome" class="section level1 unnumbered">
+<h1>Welcome</h1>
+<p>Data Analysis Club (DAC) is a student-run organisation in Singapore Institute of Management that thrives on the desire to instill the passion for data, create and sustain a community that fosters collaborative learning and act as a platform for students to meet like-minded peers. We ultimately aim to empower the student body with data analysis skills and create a data-positive environment for data-enthusiasts to thrive.</p>
+<p>This is an E-Book written by the Curriculum Director (2017) of SIM DAC for the Data Analysis with R Workshop as well as for our members who requires additional help in the field of Data Analytics.</p>
+<p>Data Analysis with R workshop (DAWR) is catered to the students of SIM to better equip them with the necessary skills to start off with basic Exploratory Data Analysis (EDA).</p>
+<p>Topics covered:</p>
+<ol style="list-style-type: decimal">
+<li>R101</li>
+<li>Data Visualisation</li>
+<li>Data Transformation</li>
+<li>Exploratory Data Analysis</li>
+</ol>
+<p>The free open source tool, R, is utilised.</p>
+<p>To download both <code>R</code> and <code>rstudio</code>, you can visit the following websites.</p>
+<ul>
+<li><a href="https://www.r-project.org/" class="uri">https://www.r-project.org/</a></li>
+<li><a href="https://www.rstudio.com/products/rstudio/download/" class="uri">https://www.rstudio.com/products/rstudio/download/</a></li>
+</ul>
+<p>For more information about our club, do vist our website at <a href="https://simdaclub.com/" class="uri">https://simdaclub.com/</a> as well as our github page at <a href="https://simdac.github.io/" class="uri">https://simdac.github.io/</a>.</p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="intro.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd",
+"text": "Edit"
+},
+"download": ["DAWR E-BOOK.pdf", "DAWR E-BOOK.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
