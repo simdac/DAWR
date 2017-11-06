@@ -1,0 +1,417 @@
+year,types,property_type,category,subcategory,no_of_units
+2006,Commercial,Shops and Eating Houses,Sold,NA,NA
+2006,Commercial,Shops and Eating Houses,Rented,NA,287
+2006,Commercial,Offices,Sold,NA,NA
+2006,Commercial,Offices,Rented,NA,112
+2006,Commercial,Supermarkets & Emporiums,Sold,NA,NA
+2006,Commercial,Supermarkets & Emporiums,Rented,NA,6
+2006,Commercial,Civil Defence Shelters (commercial use),Sold,NA,NA
+2006,Commercial,Civil Defence Shelters (commercial use),Rented,NA,23
+2006,Commercial,Shops and Eating Houses,Sold,NA,17
+2007,Commercial,Shops and Eating Houses,Rented,NA,330
+2007,Commercial,Offices,Sold,NA,NA
+2007,Commercial,Offices,Rented,NA,200
+2007,Commercial,Supermarkets & Emporiums,Sold,NA,NA
+2007,Commercial,Supermarkets & Emporiums,Rented,NA,9
+2007,Commercial,Civil Defence Shelters (commercial use),Sold,NA,NA
+2007,Commercial,Civil Defence Shelters (commercial use),Rented,NA,3
+2008,Commercial,Shops and Eating Houses,Sold,NA,15
+2008,Commercial,Shops and Eating Houses,Rented,NA,254
+2008,Commercial,Offices,Sold,NA,NA
+2008,Commercial,Offices,Rented,NA,131
+2008,Commercial,Supermarkets & Emporiums,Sold,NA,NA
+2008,Commercial,Supermarkets & Emporiums,Rented,NA,3
+2008,Commercial,Civil Defence Shelters (commercial use),Sold,NA,NA
+2008,Commercial,Civil Defence Shelters (commercial use),Rented,NA,26
+2009,Commercial,Shops and Eating Houses,Sold,NA,1
+2009,Commercial,Shops and Eating Houses,Rented,NA,204
+2009,Commercial,Offices,Sold,NA,NA
+2009,Commercial,Offices,Rented,NA,78
+2009,Commercial,Supermarkets & Emporiums,Sold,NA,NA
+2009,Commercial,Supermarkets & Emporiums,Rented,NA,5
+2009,Commercial,Civil Defence Shelters (commercial use),Sold,NA,NA
+2009,Commercial,Civil Defence Shelters (commercial use),Rented,NA,4
+2010,Commercial,Shops and Eating Houses,Sold,NA,7
+2010,Commercial,Shops and Eating Houses,Rented,NA,128
+2010,Commercial,Offices,Sold,NA,NA
+2010,Commercial,Offices,Rented,NA,55
+2010,Commercial,Supermarkets & Emporiums,Sold,NA,NA
+2010,Commercial,Supermarkets & Emporiums,Rented,NA,2
+2010,Commercial,Civil Defence Shelters (commercial use),Sold,NA,NA
+2010,Commercial,Civil Defence Shelters (commercial use),Rented,NA,6
+2011,Commercial,Shops and Eating Houses,Sold,NA,15
+2011,Commercial,Shops and Eating Houses,Rented,NA,105
+2011,Commercial,Offices,Sold,NA,NA
+2011,Commercial,Offices,Rented,NA,48
+2011,Commercial,Supermarkets & Emporiums,Sold,NA,NA
+2011,Commercial,Supermarkets & Emporiums,Rented,NA,3
+2011,Commercial,Civil Defence Shelters (commercial use),Sold,NA,NA
+2011,Commercial,Civil Defence Shelters (commercial use),Rented,NA,10
+2012,Commercial,Shops and Eating Houses,Sold,NA,5
+2012,Commercial,Shops and Eating Houses,Rented,NA,92
+2012,Commercial,Offices,Sold,NA,0
+2012,Commercial,Offices,Rented,NA,38
+2012,Commercial,Supermarkets & Emporiums,Sold,NA,0
+2012,Commercial,Supermarkets & Emporiums,Rented,NA,3
+2012,Commercial,Civil Defence Shelters (commercial use),Sold,NA,0
+2012,Commercial,Civil Defence Shelters (commercial use),Rented,NA,1
+2013,Commercial,Shops and Eating Houses,Sold,NA,0
+2013,Commercial,Shops and Eating Houses,Rented,NA,131
+2013,Commercial,Offices,Sold,NA,0
+2013,Commercial,Offices,Rented,NA,62
+2013,Commercial,Supermarkets & Emporiums,Sold,NA,0
+2013,Commercial,Supermarkets & Emporiums,Rented,NA,5
+2013,Commercial,Civil Defence Shelters (commercial use),Sold,NA,0
+2013,Commercial,Civil Defence Shelters (commercial use),Rented,NA,8
+2014,Commercial,Shops and Eating Houses,Sold,NA,NA
+2014,Commercial,Shops and Eating Houses,Rented,NA,158
+2014,Commercial,Offices,Sold,NA,NA
+2014,Commercial,Offices,Rented,NA,49
+2014,Commercial,Supermarkets & Emporiums,Sold,NA,NA
+2014,Commercial,Supermarkets & Emporiums,Rented,NA,9
+2014,Commercial,Civil Defence Shelters (commercial use),Sold,NA,NA
+2014,Commercial,Civil Defence Shelters (commercial use),Rented,NA,0
+2015,Commercial,Shops and Eating Houses,Sold,NA,12
+2015,Commercial,Shops and Eating Houses,Rented,NA,192
+2015,Commercial,Offices,Sold,NA,NA
+2015,Commercial,Offices,Rented,NA,39
+2015,Commercial,Supermarkets & Emporiums,Sold,NA,NA
+2015,Commercial,Supermarkets & Emporiums,Rented,NA,20
+2015,Commercial,Civil Defence Shelters (commercial use),Sold,NA,NA
+2015,Commercial,Civil Defence Shelters (commercial use),Rented,NA,10
+2006,Industrial,Terrace Workshops,Sold,NA,NA
+2006,Industrial,Terrace Workshops,Rented,NA,305
+2006,Industrial,Industrial Shops,Sold,NA,NA
+2006,Industrial,Industrial Shops,Rented,NA,335
+2006,Industrial,Warehouse,Sold,NA,NA
+2006,Industrial,Warehouse,Rented,NA,5
+2006,Industrial,Prototype Factories,Sold,NA,NA
+2006,Industrial,Prototype Factories,Rented,NA,0
+2006,Industrial,Flatted/Ramp-up Factories,Sold,NA,NA
+2006,Industrial,Flatted/Ramp-up Factories,Rented,NA,285
+2006,Industrial,Canteens/Eating House,Sold,NA,NA
+2006,Industrial,Canteens/Eating House,Rented,NA,5
+2007,Industrial,Terrace Workshops,Sold,NA,NA
+2007,Industrial,Terrace Workshops,Rented,NA,116
+2007,Industrial,Industrial Shops,Sold,NA,NA
+2007,Industrial,Industrial Shops,Rented,NA,228
+2007,Industrial,Warehouse,Sold,NA,NA
+2007,Industrial,Warehouse,Rented,NA,8
+2007,Industrial,Prototype Factories,Sold,NA,NA
+2007,Industrial,Prototype Factories,Rented,NA,1
+2007,Industrial,Flatted/Ramp-up Factories,Sold,NA,NA
+2007,Industrial,Flatted/Ramp-up Factories,Rented,NA,119
+2007,Industrial,Canteens/Eating House,Sold,NA,NA
+2007,Industrial,Canteens/Eating House,Rented,NA,1
+2007,Industrial,TOL Land,Sold,NA,NA
+2007,Industrial,TOL Land,Rented,NA,2
+2008,Industrial,Terrace Workshops,Sold,NA,NA
+2008,Industrial,Terrace Workshops,Rented,NA,24
+2008,Industrial,Industrial Shops,Sold,NA,NA
+2008,Industrial,Industrial Shops,Rented,NA,109
+2008,Industrial,Warehouse,Sold,NA,NA
+2008,Industrial,Warehouse,Rented,NA,0
+2008,Industrial,Prototype Factories,Sold,NA,NA
+2008,Industrial,Prototype Factories,Rented,NA,0
+2008,Industrial,Flatted/Ramp-up Factories,Sold,NA,NA
+2008,Industrial,Flatted/Ramp-up Factories,Rented,NA,34
+2008,Industrial,Canteens/Eating House,Sold,NA,NA
+2008,Industrial,Canteens/Eating House,Rented,NA,0
+2008,Industrial,TOL Land,Sold,NA,NA
+2008,Industrial,TOL Land,Rented,NA,0
+2009,Industrial,Terrace Workshops,Sold,NA,NA
+2009,Industrial,Terrace Workshops,Rented,NA,35
+2009,Industrial,Industrial Shops,Sold,NA,NA
+2009,Industrial,Industrial Shops,Rented,NA,68
+2009,Industrial,Warehouse,Sold,NA,NA
+2009,Industrial,Warehouse,Rented,NA,1
+2009,Industrial,Prototype Factories,Sold,NA,NA
+2009,Industrial,Prototype Factories,Rented,NA,0
+2009,Industrial,Flatted/Ramp-up Factories,Sold,NA,NA
+2009,Industrial,Flatted/Ramp-up Factories,Rented,NA,37
+2009,Industrial,Canteens/Eating House,Sold,NA,NA
+2009,Industrial,Canteens/Eating House,Rented,NA,0
+2009,Industrial,TOL Land,Sold,NA,NA
+2009,Industrial,TOL Land,Rented,NA,0
+2010,Industrial,Terrace Workshops,Sold,NA,NA
+2010,Industrial,Terrace Workshops,Rented,NA,136
+2010,Industrial,Industrial Shops,Sold,NA,NA
+2010,Industrial,Industrial Shops,Rented,NA,31
+2010,Industrial,Warehouse,Sold,NA,NA
+2010,Industrial,Warehouse,Rented,NA,0
+2010,Industrial,Prototype Factories,Sold,NA,NA
+2010,Industrial,Prototype Factories,Rented,NA,0
+2010,Industrial,Flatted/Ramp-up Factories,Sold,NA,NA
+2010,Industrial,Flatted/Ramp-up Factories,Rented,NA,16
+2010,Industrial,Canteens/Eating House,Sold,NA,NA
+2010,Industrial,Canteens/Eating House,Rented,NA,0
+2010,Industrial,TOL Land,Sold,NA,NA
+2010,Industrial,TOL Land,Rented,NA,0
+2011,Industrial,Terrace Workshops,Sold,NA,NA
+2011,Industrial,Terrace Workshops,Rented,NA,59
+2011,Industrial,Industrial Shops,Sold,NA,NA
+2011,Industrial,Industrial Shops,Rented,NA,20
+2011,Industrial,Warehouse,Sold,NA,NA
+2011,Industrial,Warehouse,Rented,NA,0
+2011,Industrial,Prototype Factories,Sold,NA,NA
+2011,Industrial,Prototype Factories,Rented,NA,0
+2011,Industrial,Flatted/Ramp-up Factories,Sold,NA,NA
+2011,Industrial,Flatted/Ramp-up Factories,Rented,NA,13
+2011,Industrial,Canteens/Eating House,Sold,NA,NA
+2011,Industrial,Canteens/Eating House,Rented,NA,0
+2011,Industrial,TOL Land,Sold,NA,NA
+2011,Industrial,TOL Land,Rented,NA,0
+2012,Industrial,Terrace Workshops,Sold,NA,NA
+2012,Industrial,Terrace Workshops,Rented,NA,7
+2012,Industrial,Industrial Shops,Sold,NA,NA
+2012,Industrial,Industrial Shops,Rented,NA,22
+2012,Industrial,Warehouse,Sold,NA,NA
+2012,Industrial,Warehouse,Rented,NA,0
+2012,Industrial,Prototype Factories,Sold,NA,NA
+2012,Industrial,Prototype Factories,Rented,NA,0
+2012,Industrial,Industrial Complexes,Sold,NA,NA
+2012,Industrial,Industrial Complexes,Rented,NA,11
+2012,Industrial,Canteens/Eating House,Sold,NA,NA
+2012,Industrial,Canteens/Eating House,Rented,NA,0
+2013,Industrial,Terrace Workshops,Sold,NA,NA
+2013,Industrial,Terrace Workshops,Rented,NA,8
+2013,Industrial,Industrial Shops,Sold,NA,NA
+2013,Industrial,Industrial Shops,Rented,NA,15
+2013,Industrial,Warehouse,Sold,NA,NA
+2013,Industrial,Warehouse,Rented,NA,0
+2013,Industrial,Prototype Factories,Sold,NA,NA
+2013,Industrial,Prototype Factories,Rented,NA,0
+2013,Industrial,Industrial Complexes,Sold,NA,NA
+2013,Industrial,Industrial Complexes,Rented,NA,10
+2013,Industrial,Canteens/Eating House,Sold,NA,NA
+2013,Industrial,Canteens/Eating House,Rented,NA,1
+2014,Industrial,Terrace Workshops,Sold,NA,NA
+2014,Industrial,Terrace Workshops,Rented,NA,15
+2014,Industrial,Industrial Shops,Sold,NA,NA
+2014,Industrial,Industrial Shops,Rented,NA,24
+2014,Industrial,Warehouse,Sold,NA,NA
+2014,Industrial,Warehouse,Rented,NA,0
+2014,Industrial,Prototype Factories,Sold,NA,NA
+2014,Industrial,Prototype Factories,Rented,NA,1
+2014,Industrial,Industrial Complexes,Sold,NA,NA
+2014,Industrial,Industrial Complexes,Rented,NA,4
+2014,Industrial,Canteens/Eating House,Sold,NA,NA
+2014,Industrial,Canteens/Eating House,Rented,NA,0
+2014,Industrial,Wholesale Centres,Sold,NA,NA
+2014,Industrial,Wholesale Centres,Rented,NA,8
+2015,Industrial,Terrace Workshops,Sold,NA,NA
+2015,Industrial,Terrace Workshops,Rented,NA,19
+2015,Industrial,Industrial Shops,Sold,NA,NA
+2015,Industrial,Industrial Shops,Rented,NA,83
+2015,Industrial,Warehouse,Sold,NA,NA
+2015,Industrial,Warehouse,Rented,NA,0
+2015,Industrial,Prototype Factories,Sold,NA,NA
+2015,Industrial,Prototype Factories,Rented,NA,1
+2015,Industrial,Industrial Complexes,Sold,NA,NA
+2015,Industrial,Industrial Complexes,Rented,NA,43
+2015,Industrial,Canteens/Eating House,Sold,NA,NA
+2015,Industrial,Canteens/Eating House,Rented,NA,0
+2015,Industrial,Wholesale Centres,Sold,NA,NA
+2015,Industrial,Wholesale Centres,Rented,NA,15
+2006,Residential,HDB,Sold,1-room flats,0
+2006,Residential,HDB,Sold,2-room flats,101
+2006,Residential,HDB,Sold,3-room flats,961
+2006,Residential,HDB,Sold,4-room flats,2290
+2006,Residential,HDB,Sold,5-room flats,1303
+2006,Residential,HDB,Sold,Executive/Multi-Generation flats,1057
+2006,Residential,HDB,Sold,Studio Apartments,NA
+2006,Residential,HDB,Rented,1-room flats,1929
+2006,Residential,HDB,Rented,2-room flats,1417
+2006,Residential,HDB,Rented,3-room flats,688
+2006,Residential,HDB,Rented,4-room flats,3
+2006,Residential,HDB,Rented,5-room flats,0
+2006,Residential,HDB,Rented,Executive/Multi-Generation flats,0
+2006,Residential,HDB,Rented,Studio Apartments,NA
+2006,Residential,DBSS,Sold,3-room flats,NA
+2006,Residential,DBSS,Sold,4-room flats,NA
+2006,Residential,DBSS,Sold,5-room flats,NA
+2006,Residential,DBSS,Rented,3-room flats,NA
+2006,Residential,DBSS,Rented,4-room flats,NA
+2006,Residential,DBSS,Rented,5-room flats,NA
+2007,Residential,HDB,Sold,1-room flats,0
+2007,Residential,HDB,Sold,2-room flats,142
+2007,Residential,HDB,Sold,3-room flats,1852
+2007,Residential,HDB,Sold,4-room flats,6056
+2007,Residential,HDB,Sold,5-room flats,2343
+2007,Residential,HDB,Sold,Executive/Multi-Generation flats,1598
+2007,Residential,HDB,Sold,Studio Apartments,NA
+2007,Residential,HDB,Rented,1-room flats,1147
+2007,Residential,HDB,Rented,2-room flats,1066
+2007,Residential,HDB,Rented,3-room flats,272
+2007,Residential,HDB,Rented,4-room flats,250
+2007,Residential,HDB,Rented,5-room flats,0
+2007,Residential,HDB,Rented,Executive/Multi-Generation flats,0
+2007,Residential,HDB,Rented,Studio Apartments,NA
+2007,Residential,DBSS,Sold,3-room flats,NA
+2007,Residential,DBSS,Sold,4-room flats,NA
+2007,Residential,DBSS,Sold,5-room flats,NA
+2007,Residential,DBSS,Rented,3-room flats,NA
+2007,Residential,DBSS,Rented,4-room flats,NA
+2007,Residential,DBSS,Rented,5-room flats,NA
+2008,Residential,HDB,Sold,1-room flats,0
+2008,Residential,HDB,Sold,2-room flats,23
+2008,Residential,HDB,Sold,3-room flats,713
+2008,Residential,HDB,Sold,4-room flats,2915
+2008,Residential,HDB,Sold,5-room flats,914
+2008,Residential,HDB,Sold,Executive/Multi-Generation flats,173
+2008,Residential,HDB,Sold,Studio Apartments,NA
+2008,Residential,HDB,Rented,1-room flats,1238
+2008,Residential,HDB,Rented,2-room flats,1200
+2008,Residential,HDB,Rented,3-room flats,12
+2008,Residential,HDB,Rented,4-room flats,0
+2008,Residential,HDB,Rented,5-room flats,0
+2008,Residential,HDB,Rented,Executive/Multi-Generation flats,0
+2008,Residential,HDB,Rented,Studio Apartments,NA
+2008,Residential,DBSS,Sold,3-room flats,NA
+2008,Residential,DBSS,Sold,4-room flats,NA
+2008,Residential,DBSS,Sold,5-room flats,NA
+2008,Residential,DBSS,Rented,3-room flats,NA
+2008,Residential,DBSS,Rented,4-room flats,NA
+2008,Residential,DBSS,Rented,5-room flats,NA
+2009,Residential,HDB,Sold,1-room flats,0
+2009,Residential,HDB,Sold,2-room flats,60
+2009,Residential,HDB,Sold,3-room flats,476
+2009,Residential,HDB,Sold,4-room flats,3612
+2009,Residential,HDB,Sold,5-room flats,778
+2009,Residential,HDB,Sold,Executive/Multi-Generation flats,64
+2009,Residential,HDB,Sold,Studio Apartments,NA
+2009,Residential,HDB,Rented,1-room flats,1744
+2009,Residential,HDB,Rented,2-room flats,1231
+2009,Residential,HDB,Rented,3-room flats,5
+2009,Residential,HDB,Rented,4-room flats,0
+2009,Residential,HDB,Rented,5-room flats,0
+2009,Residential,HDB,Rented,Executive/Multi-Generation flats,0
+2009,Residential,HDB,Rented,Studio Apartments,NA
+2009,Residential,DBSS,Sold,3-room flats,NA
+2009,Residential,DBSS,Sold,4-room flats,NA
+2009,Residential,DBSS,Sold,5-room flats,NA
+2009,Residential,DBSS,Rented,3-room flats,NA
+2009,Residential,DBSS,Rented,4-room flats,NA
+2009,Residential,DBSS,Rented,5-room flats,NA
+2010,Residential,HDB,Sold,1-room flats,0
+2010,Residential,HDB,Sold,2-room flats,228
+2010,Residential,HDB,Sold,3-room flats,1884
+2010,Residential,HDB,Sold,4-room flats,5331
+2010,Residential,HDB,Sold,5-room flats,640
+2010,Residential,HDB,Sold,Executive/Multi-Generation flats,42
+2010,Residential,HDB,Sold,Studio Apartments,NA
+2010,Residential,HDB,Rented,1-room flats,2033
+2010,Residential,HDB,Rented,2-room flats,1380
+2010,Residential,HDB,Rented,3-room flats,1
+2010,Residential,HDB,Rented,4-room flats,0
+2010,Residential,HDB,Rented,5-room flats,0
+2010,Residential,HDB,Rented,Executive/Multi-Generation flats,0
+2010,Residential,HDB,Rented,Studio Apartments,NA
+2010,Residential,DBSS,Sold,3-room flats,NA
+2010,Residential,DBSS,Sold,4-room flats,NA
+2010,Residential,DBSS,Sold,5-room flats,NA
+2010,Residential,DBSS,Rented,3-room flats,NA
+2010,Residential,DBSS,Rented,4-room flats,NA
+2010,Residential,DBSS,Rented,5-room flats,NA
+2011,Residential,HDB,Sold,1-room flats,0
+2011,Residential,HDB,Sold,2-room flats,276
+2011,Residential,HDB,Sold,3-room flats,1960
+2011,Residential,HDB,Sold,4-room flats,8497
+2011,Residential,HDB,Sold,5-room flats,1761
+2011,Residential,HDB,Sold,Executive/Multi-Generation flats,55
+2011,Residential,HDB,Sold,Studio Apartments,369
+2011,Residential,HDB,Rented,1-room flats,2455
+2011,Residential,HDB,Rented,2-room flats,1640
+2011,Residential,HDB,Rented,3-room flats,0
+2011,Residential,HDB,Rented,4-room flats,0
+2011,Residential,HDB,Rented,5-room flats,0
+2011,Residential,HDB,Rented,Executive/Multi-Generation flats,0
+2011,Residential,HDB,Rented,Studio Apartments,NA
+2011,Residential,DBSS,Sold,3-room flats,2
+2011,Residential,DBSS,Sold,4-room flats,361
+2011,Residential,DBSS,Sold,5-room flats,776
+2011,Residential,DBSS,Rented,3-room flats,0
+2011,Residential,DBSS,Rented,4-room flats,0
+2011,Residential,DBSS,Rented,5-room flats,0
+2012,Residential,HDB,Sold,1-room flats,0
+2012,Residential,HDB,Sold,2-room flats,650
+2012,Residential,HDB,Sold,3-room flats,2333
+2012,Residential,HDB,Sold,4-room flats,6122
+2012,Residential,HDB,Sold,5-room flats,1328
+2012,Residential,HDB,Sold,Executive/Multi-Generation flats,100
+2012,Residential,HDB,Sold,Studio Apartments,422
+2012,Residential,HDB,Rented,1-room flats,2734
+2012,Residential,HDB,Rented,2-room flats,1695
+2012,Residential,HDB,Rented,3-room flats,8
+2012,Residential,HDB,Rented,4-room flats,14
+2012,Residential,HDB,Rented,5-room flats,0
+2012,Residential,HDB,Rented,Executive/Multi-Generation flats,0
+2012,Residential,HDB,Rented,Studio Apartments,0
+2012,Residential,DBSS,Sold,3-room flats,95
+2012,Residential,DBSS,Sold,4-room flats,306
+2012,Residential,DBSS,Sold,5-room flats,821
+2012,Residential,DBSS,Rented,3-room flats,0
+2012,Residential,DBSS,Rented,4-room flats,0
+2012,Residential,DBSS,Rented,5-room flats,0
+2013,Residential,HDB,Sold,1-room flats,0
+2013,Residential,HDB,Sold,2-room flats,967
+2013,Residential,HDB,Sold,3-room flats,2757
+2013,Residential,HDB,Sold,4-room flats,7477
+2013,Residential,HDB,Sold,5-room flats,2073
+2013,Residential,HDB,Sold,Executive/Multi-Generation flats,36
+2013,Residential,HDB,Sold,Studio Apartments,1079
+2013,Residential,HDB,Rented,1-room flats,1592
+2013,Residential,HDB,Rented,2-room flats,1179
+2013,Residential,HDB,Rented,3-room flats,500
+2013,Residential,HDB,Rented,4-room flats,446
+2013,Residential,HDB,Rented,5-room flats,21
+2013,Residential,HDB,Rented,Executive/Multi-Generation flats,0
+2013,Residential,HDB,Rented,Studio Apartments,0
+2013,Residential,DBSS,Sold,3-room flats,167
+2013,Residential,DBSS,Sold,4-room flats,511
+2013,Residential,DBSS,Sold,5-room flats,137
+2013,Residential,DBSS,Rented,3-room flats,0
+2013,Residential,DBSS,Rented,4-room flats,0
+2013,Residential,DBSS,Rented,5-room flats,0
+2014,Residential,HDB,Sold,1-room flats,0
+2014,Residential,HDB,Sold,2-room flats,1224
+2014,Residential,HDB,Sold,3-room flats,3718
+2014,Residential,HDB,Sold,4-room flats,11414
+2014,Residential,HDB,Sold,5-room flats,5392
+2014,Residential,HDB,Sold,Executive/Multi-Generation flats,13
+2014,Residential,HDB,Sold,Studio Apartments,2578
+2014,Residential,HDB,Rented,1-room flats,1505
+2014,Residential,HDB,Rented,2-room flats,1308
+2014,Residential,HDB,Rented,3-room flats,52
+2014,Residential,HDB,Rented,4-room flats,154
+2014,Residential,HDB,Rented,5-room flats,74
+2014,Residential,HDB,Rented,Executive/Multi-Generation flats,0
+2014,Residential,HDB,Rented,Studio Apartments,NA
+2014,Residential,DBSS,Sold,3-room flats,738
+2014,Residential,DBSS,Sold,4-room flats,1598
+2014,Residential,DBSS,Sold,5-room flats,1004
+2014,Residential,DBSS,Rented,5-room flats,0
+2014,Residential,DBSS,Rented,3-room flats,0
+2014,Residential,DBSS,Rented,4-room flats,0
+2015,Residential,HDB,Sold,1-room flats,0
+2015,Residential,HDB,Sold,2-room flats,539
+2015,Residential,HDB,Sold,3-room flats,3373
+2015,Residential,HDB,Sold,4-room flats,10663
+2015,Residential,HDB,Sold,5-room flats,4939
+2015,Residential,HDB,Sold,Executive/Multi-Generation flats,8
+2015,Residential,HDB,Sold,Studio Apartments,1580
+2015,Residential,HDB,Sold,Flats sold on short leases,19
+2015,Residential,HDB,Rented,1-room flats,1642
+2015,Residential,HDB,Rented,2-room flats,1103
+2015,Residential,HDB,Rented,3-room flats,488
+2015,Residential,HDB,Rented,4-room flats,79
+2015,Residential,HDB,Rented,5-room flats,7
+2015,Residential,HDB,Rented,Executive/Multi-Generation flats,0
+2015,Residential,HDB,Rented,Studio Apartments,NA
+2015,Residential,HDB,Rented,Flats sold on short leases,NA
+2015,Residential,DBSS,Sold,3-room flats,142
+2015,Residential,DBSS,Sold,4-room flats,233
+2015,Residential,DBSS,Sold,5-room flats,125
+2015,Residential,DBSS,Rented,5-room flats,0
+2015,Residential,DBSS,Rented,3-room flats,0
+2015,Residential,DBSS,Rented,4-room flats,0
