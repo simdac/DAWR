@@ -1,6 +1,6 @@
 # DAWR OCT 2017
 
-This is an E-Book that is built upon the R Script's used in DAWR Oct Round 2017 from 24th OCT to 2nd NOV.
+This is an E-Book that is built upon the R Script's used in the second round of DAWR in Oct 2017 which spans 4 days from 24th OCT to 2nd NOV.
 
 Event details can be found at https://simdaclub.com/upcoming-events/dawr-bootcamp-october-2017/
 
