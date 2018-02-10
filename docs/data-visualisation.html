@@ -224,14 +224,14 @@ pokemon &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span cla
 <h2><span class="header-section-number">2.3</span> Introduction</h2>
 <p><code>ggplot()</code> and <code>ggplot(data = pokemon)</code> when called produces a blank grey plot with nothing on it yet.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>()</code></pre></div>
-<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><img src="DAWR_E-BOOK_files/figure-html/DV9-1.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon)</code></pre></div>
-<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-9-2.png" width="672" /></p>
+<p><img src="DAWR_E-BOOK_files/figure-html/DV9-2.png" width="672" /></p>
 <p>By associating a mapping to it such as assigning the column <code>Attack</code> in the pokemon data frame to the x-axis and <code>Defense</code> to the y-axis, we get a blank plot with labelling.</p>
 <p>However, there is still no visual aspect of it yet.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon, 
        <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense))</code></pre></div>
-<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="DAWR_E-BOOK_files/figure-html/DV10-1.png" width="672" /></p>
 <p>What we have to do next is to assign a geometric object to it the plot, say point, if we want to draw a scatter plot.</p>
 <p>By default, a full ggplot2 specification of the scatterplot of Attack vs Defense is,</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>() +
@@ -243,11 +243,11 @@ pokemon &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span cla
 <span class="st">  </span><span class="kw">scale_y_continuous</span>() +
 <span class="st">  </span><span class="kw">scale_x_continuous</span>() +
 <span class="st">  </span><span class="kw">coord_cartesian</span>() </code></pre></div>
-<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="DAWR_E-BOOK_files/figure-html/DV11-1.png" width="672" /></p>
 <p>The following does the same thing as above except now we have uses the function <code>geom_point()</code>, which is a wrapper for the whole chunk of text above.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>() +
 <span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">data =</span> pokemon, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense))</code></pre></div>
-<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="DAWR_E-BOOK_files/figure-html/DV12-1.png" width="672" /></p>
 </div>
 <div id="aesthetic" class="section level2">
 <h2><span class="header-section-number">2.4</span> Aesthetic</h2>
@@ -267,50 +267,50 @@ pokemon &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span cla
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense, 
                            <span class="dt">colour =</span> <span class="kw">factor</span>(Generation)))</code></pre></div>
-<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p><img src="DAWR_E-BOOK_files/figure-html/DV13-1.png" width="672" /></p>
 <p><strong>Shape</strong></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense, 
                            <span class="dt">shape =</span> <span class="kw">factor</span>(Generation)))</code></pre></div>
-<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p><img src="DAWR_E-BOOK_files/figure-html/DV14-1.png" width="672" /></p>
 <p><strong>Transparency (alpha)</strong></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense, 
                            <span class="dt">alpha =</span> <span class="kw">factor</span>(Generation)))</code></pre></div>
-<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p><img src="DAWR_E-BOOK_files/figure-html/DV15-1.png" width="672" /></p>
 <p><strong>Size</strong></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense, 
                            <span class="dt">size =</span> <span class="kw">factor</span>(Generation)))</code></pre></div>
 <pre><code>## Warning: Using size for a discrete variable is not advised.</code></pre>
-<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p><img src="DAWR_E-BOOK_files/figure-html/DV16-1.png" width="672" /></p>
 <p><strong>Manually (Setting)</strong></p>
 <p>For manual assignment, the properties goes outside of <code>aes()</code>.</p>
 <p><strong>Colour</strong></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense),  
              <span class="dt">colour =</span> <span class="st">&quot;blue&quot;</span>)</code></pre></div>
-<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p><img src="DAWR_E-BOOK_files/figure-html/DV17-1.png" width="672" /></p>
 <p><strong>Shape</strong></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense),  
              <span class="dt">shape =</span> <span class="dv">1</span>)</code></pre></div>
-<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p><img src="DAWR_E-BOOK_files/figure-html/DV18-1.png" width="672" /></p>
 <p>We can specify custom shape using quote eg. “&amp;”</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense), 
              <span class="dt">shape =</span> <span class="st">&quot;&amp;&quot;</span>)</code></pre></div>
-<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p><img src="DAWR_E-BOOK_files/figure-html/DV19-1.png" width="672" /></p>
 <p><strong>Transparency (alpha)</strong></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense),  
              <span class="dt">alpha =</span> <span class="fl">0.1</span>)</code></pre></div>
-<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p><img src="DAWR_E-BOOK_files/figure-html/DV20-1.png" width="672" /></p>
 <p><strong>Size</strong></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense),  
              <span class="dt">size =</span> <span class="dv">10</span>)</code></pre></div>
-<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p><img src="DAWR_E-BOOK_files/figure-html/DV21-1.png" width="672" /></p>
 <p>The following properties allows us to customised our point object:</p>
 <ul>
 <li>colour &lt;-&gt; border colour</li>
@@ -329,7 +329,7 @@ pokemon &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span cla
              <span class="dt">fill =</span> <span class="st">&quot;black&quot;</span>, 
              <span class="dt">stroke =</span> <span class="dv">2</span>,
              <span class="dt">size =</span> <span class="dv">4</span>)</code></pre></div>
-<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<p><img src="DAWR_E-BOOK_files/figure-html/DV22-1.png" width="672" /></p>
 </div>
 <div id="geometric" class="section level2">
 <h2><span class="header-section-number">2.5</span> Geometric</h2>
@@ -355,54 +355,54 @@ pokemon &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span cla
 <p><strong>Bar Chart</strong></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(Type1))</code></pre></div>
-<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<p><img src="DAWR_E-BOOK_files/figure-html/DV24-1.png" width="672" /></p>
 <p><strong>Box Plot</strong></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +
 <span class="st">  </span><span class="kw">geom_boxplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Type1, <span class="dt">y =</span> Total))</code></pre></div>
-<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<p><img src="DAWR_E-BOOK_files/figure-html/DV25-1.png" width="672" /></p>
 <p><strong>Dot Plot</strong></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +
 <span class="st">  </span><span class="kw">geom_dotplot</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Type1))</code></pre></div>
 <pre><code>## `stat_bindot()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<p><img src="DAWR_E-BOOK_files/figure-html/DV26-1.png" width="672" /></p>
 <p>Each geom can only display certain aesthetics.</p>
 <p><code>geom_point()</code> uses the <code>shape</code> aesthetic but doesnt have <code>linetype</code> as one of its aesthetics.</p>
 <p><strong>shape = Generation</strong></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense,  
                            <span class="dt">shape =</span> <span class="kw">factor</span>(Generation)))</code></pre></div>
-<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+<p><img src="DAWR_E-BOOK_files/figure-html/DV27-1.png" width="672" /></p>
 <p><strong>linetype = Generation</strong></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense,  
                             <span class="dt">linetype =</span> <span class="kw">factor</span>(Generation)))</code></pre></div>
 <pre><code>## Warning: Ignoring unknown aesthetics: linetype</code></pre>
-<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<p><img src="DAWR_E-BOOK_files/figure-html/DV28-1.png" width="672" /></p>
 <p>We can also add multiple layer either locally or globally or both.</p>
 <p><strong>Locally</strong></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>() +
 <span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">data =</span> pokemon, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense)) +
 <span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">data =</span> pokemon, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense))</code></pre></div>
 <pre><code>## `geom_smooth()` using method = &#39;loess&#39;</code></pre>
-<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<p><img src="DAWR_E-BOOK_files/figure-html/DV29-1.png" width="672" /></p>
 <p><strong>Globally</strong></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense)) +
 <span class="st">  </span><span class="kw">geom_point</span>() +
 <span class="st">  </span><span class="kw">geom_smooth</span>() </code></pre></div>
 <pre><code>## `geom_smooth()` using method = &#39;loess&#39;</code></pre>
-<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-30-1.png" width="672" /></p>
+<p><img src="DAWR_E-BOOK_files/figure-html/DV30-1.png" width="672" /></p>
 <p><strong>Both Locally and Globally</strong></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense)) +
 <span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">shape =</span> <span class="kw">factor</span>(Generation))) +
 <span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">linetype =</span> <span class="kw">factor</span>(Generation))) </code></pre></div>
 <pre><code>## `geom_smooth()` using method = &#39;loess&#39;</code></pre>
-<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
+<p><img src="DAWR_E-BOOK_files/figure-html/DV31-1.png" width="672" /></p>
 <p>We can also use group and colour aesthetic together with multiple layers.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense, <span class="dt">colour =</span> <span class="kw">factor</span>(Generation))) +
 <span class="st">  </span><span class="kw">geom_point</span>() +
 <span class="st">  </span><span class="kw">geom_smooth</span>(<span class="kw">aes</span>(<span class="dt">group =</span> <span class="kw">factor</span>(Generation)))</code></pre></div>
 <pre><code>## `geom_smooth()` using method = &#39;loess&#39;</code></pre>
-<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-32-1.png" width="672" /></p>
+<p><img src="DAWR_E-BOOK_files/figure-html/DV32-1.png" width="672" /></p>
 </div>
 <div id="statistic" class="section level2">
 <h2><span class="header-section-number">2.6</span> Statistic</h2>
@@ -421,26 +421,26 @@ pokemon &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span cla
 <p><code>geom_bar()</code> uses “bar” as its geom &amp; “count” as its stat</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Type1))</code></pre></div>
-<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
+<p><img src="DAWR_E-BOOK_files/figure-html/DV34-1.png" width="672" /></p>
 <p><code>stat_count()</code> uses “count” as its stat and “bar” as its geom.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +
 <span class="st">  </span><span class="kw">stat_count</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Type1))</code></pre></div>
-<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-35-1.png" width="672" /></p>
+<p><img src="DAWR_E-BOOK_files/figure-html/DV35-1.png" width="672" /></p>
 <p>By changing the default statistic manually, we’l get a new geom, called <code>geom_histogram()</code>. Lets examine this step by step.</p>
 <p>Initially, the plot looks like</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Total))</code></pre></div>
-<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
+<p><img src="DAWR_E-BOOK_files/figure-html/DV36-1.png" width="672" /></p>
 <p>Now we change to “bin”</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Total), <span class="dt">stat =</span> <span class="st">&quot;bin&quot;</span>)</code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
+<p><img src="DAWR_E-BOOK_files/figure-html/DV37-1.png" width="672" /></p>
 <p>Which is same as..</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +
 <span class="st">  </span><span class="kw">geom_histogram</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Total))</code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
+<p><img src="DAWR_E-BOOK_files/figure-html/DV38-1.png" width="672" /></p>
 </div>
 <div id="positions" class="section level2">
 <h2><span class="header-section-number">2.7</span> Positions</h2>
@@ -453,11 +453,11 @@ pokemon &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span cla
 <p>First and foremost, to add colour to bar chart, we can specify the colour within the bar aesthetic. however this isnt really a useful visualisation to us.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Type1, <span class="dt">colour =</span> <span class="kw">factor</span>(Generation)))</code></pre></div>
-<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
+<p><img src="DAWR_E-BOOK_files/figure-html/DV40-1.png" width="672" /></p>
 <p>We can instead specify fill over colour.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Type1, <span class="dt">fill =</span> <span class="kw">factor</span>(Generation)))</code></pre></div>
-<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-41-1.png" width="672" /></p>
+<p><img src="DAWR_E-BOOK_files/figure-html/DV41-1.png" width="672" /></p>
 <p>There are 3 adjustments that primarily apply to bars. They are :</p>
 <ul>
 <li><ol style="list-style-type: decimal">
@@ -473,15 +473,15 @@ pokemon &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span cla
 <p><strong>Stack</strong></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Type1, <span class="dt">fill =</span> <span class="kw">factor</span>(Generation))) +<span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">position =</span> <span class="st">&quot;stack&quot;</span>) </code></pre></div>
-<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
+<p><img src="DAWR_E-BOOK_files/figure-html/DV42-1.png" width="672" /></p>
 <p><strong>Dodge</strong></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Type1, <span class="dt">fill =</span> <span class="kw">factor</span>(Generation))) +<span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">position =</span> <span class="st">&quot;dodge&quot;</span>)</code></pre></div>
-<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-43-1.png" width="672" /></p>
+<p><img src="DAWR_E-BOOK_files/figure-html/DV43-1.png" width="672" /></p>
 <p><strong>Fill</strong></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Type1, <span class="dt">fill =</span> <span class="kw">factor</span>(Generation))) +<span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">position =</span> <span class="st">&quot;fill&quot;</span>)</code></pre></div>
-<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-44-1.png" width="672" /></p>
+<p><img src="DAWR_E-BOOK_files/figure-html/DV44-1.png" width="672" /></p>
 </div>
 <div id="facets" class="section level2">
 <h2><span class="header-section-number">2.8</span> Facets</h2>
@@ -503,12 +503,12 @@ pokemon &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span cla
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense)) +<span class="st"> </span>
 <span class="st">  </span><span class="kw">facet_wrap</span>( ~<span class="st"> </span>Type1, <span class="dt">nrow =</span> <span class="dv">1</span>)</code></pre></div>
-<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-46-1.png" width="672" /></p>
+<p><img src="DAWR_E-BOOK_files/figure-html/DV46-1.png" width="672" /></p>
 <p><strong><code>facet_grid()</code></strong> splits up our plot according to 2 variables.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> pokemon) +<span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> Attack, <span class="dt">y =</span> Defense)) +<span class="st"> </span>
 <span class="st">  </span><span class="kw">facet_grid</span>(Type2 ~<span class="st"> </span>Type1)</code></pre></div>
-<p><img src="DAWR_E-BOOK_files/figure-html/unnamed-chunk-47-1.png" width="672" /></p>
+<p><img src="DAWR_E-BOOK_files/figure-html/DV47-1.png" width="672" /></p>
 
 </div>
 </div>
